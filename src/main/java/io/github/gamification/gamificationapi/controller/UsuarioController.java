@@ -7,13 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping(value = "/usuario")
 public class UsuarioController {
 
     @Autowired
     private UsuarioService service;
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Usuario> salva(@RequestBody Usuario usuario) throws Exception {
         return ResponseEntity.ok(service.save(usuario));
     }
