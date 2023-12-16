@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class UsuarioService {
@@ -35,5 +36,9 @@ public class UsuarioService {
             throw new IncorrectPasswordException("senha errada");
         }
         return usuario;
+    }
+
+    public List<Usuario> ranking(){
+        return repository.findAllOrderByPontuacaoDesc();
     }
 }
