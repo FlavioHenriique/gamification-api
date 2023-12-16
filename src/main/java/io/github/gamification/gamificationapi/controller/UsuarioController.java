@@ -1,10 +1,14 @@
 package io.github.gamification.gamificationapi.controller;
 
+import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
+import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
 import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.NoSuchAlgorithmException;
 
 @RestController
 @RequestMapping(value = "/usuario")
@@ -21,5 +25,12 @@ public class UsuarioController {
     @GetMapping
     public ResponseEntity<Usuario> getUsuario(@RequestParam("id") long id) throws Exception {
         return ResponseEntity.ok(service.find(id));
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestParam("email") String email,
+                                         @RequestParam("senha") String senha)
+            throws IncorrectPasswordException, NoSuchAlgorithmException, UsuarioNotFoundException {
+        return ResponseEntity.ok(service.login(email,senha));
     }
 }

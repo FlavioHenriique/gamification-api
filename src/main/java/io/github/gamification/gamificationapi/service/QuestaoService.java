@@ -3,8 +3,6 @@ package io.github.gamification.gamificationapi.service;
 import io.github.gamification.gamificationapi.model.Questao;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
