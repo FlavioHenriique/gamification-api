@@ -19,11 +19,13 @@ public class UsuarioService {
     private UsuarioRepository repository;
 
     public Usuario save(Usuario usuario) throws Exception {
-        var optional = repository.findByEmail(usuario.getEmail());
-        if (optional.isPresent()){
-            throw new UsuarioExistsException("Usuário já existe");
+        if (usuario.getId() <= 0){
+            var optional = repository.findByEmail(usuario.getEmail());
+            if (optional.isPresent()){
+                throw new UsuarioExistsException("Usuário já existe");
+            }
+            usuario.setSenha(MD5Converter.convertToMd5(usuario.getSenha()));
         }
-        usuario.setSenha(MD5Converter.convertToMd5(usuario.getSenha()));
         return repository.save(usuario);
     }
 
