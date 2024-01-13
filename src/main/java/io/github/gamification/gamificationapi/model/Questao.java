@@ -36,7 +36,7 @@ public class Questao implements Serializable {
         private String texto;
         private boolean correta;
     }
-
+    @Transient
     public static final List<Questao> QUESTOES = Arrays.asList(new Questao[]{
             Questao.builder()
                     .id(1)

@@ -2,6 +2,7 @@ package io.github.gamification.gamificationapi.controller;
 
 import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
 import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
+import io.github.gamification.gamificationapi.model.Insignia;
 import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,12 @@ public class UsuarioController {
     @GetMapping("/ranking")
     public ResponseEntity<List<Usuario>> ranking(){
         return ResponseEntity.ok(service.ranking());
+    }
+
+    @PostMapping("/adiconaInsignia")
+    public ResponseEntity<Usuario> adicionaInsignia(@RequestParam("idUsuario") long idUsuario,
+                                                    @RequestParam("idInsignia") long idInsignia) throws Exception {
+        return ResponseEntity.ok(service.adicionaInsignia(idInsignia, idUsuario));
     }
 
 }
