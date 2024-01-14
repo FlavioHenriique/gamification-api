@@ -23,40 +23,52 @@ public class Insignia implements Serializable {
 
     @Transient
     public static final List<Insignia> INSIGNIAS = Arrays.asList(new Insignia[]{
-            Insignia.builder()
+        
+        // NUMERO DE QUESTÕES    
+        Insignia.builder()
                     .id(1l)
-                    .nome("insignia 1")
-                    .descricao("descricao")
+                    .nome("Iniciante promissor")
+                    .descricao("Acerte as 3 primeiras questões")
                     .imagem("imagem.png")
                     .build(),
             Insignia.builder()
                     .id(2l)
-                    .nome("insignia 2")
-                    .descricao("descricao")
+                    .nome("Programador supremo")
+                    .descricao("Acerte todas as questões")
                     .imagem("imagem.png")
                     .build(),
-            Insignia.builder()
+        
+        // RANKING    
+        Insignia.builder()
                     .id(3l)
-                    .nome("insignia 3")
-                    .descricao("descricao")
+                    .nome("Monitor de algoritmos")
+                    .descricao("Lidere o ranking em algum momento")
                     .imagem("imagem.png")
                     .build(),
-            Insignia.builder()
+        Insignia.builder()
                     .id(4l)
-                    .nome("insignia 4")
-                    .descricao("descricao")
+                    .nome("Cavaleiro de bronze")
+                    .descricao("Esteja no TOP 3  do ranking em algum momento")
                     .imagem("imagem.png")
                     .build(),
-            Insignia.builder()
+        
+        // CADERNO DE ANOTAÇÕES    
+        Insignia.builder()
                     .id(5l)
-                    .nome("insignia 5")
-                    .descricao("descricao")
+                    .nome("Enciclopédia viva")
+                    .descricao("Complete o caderno de anotações")
                     .imagem("imagem.png")
                     .build(),
             Insignia.builder()
                     .id(6l)
-                    .nome("insignia 6")
-                    .descricao("descricao")
+                    .nome("Diário do programador")
+                    .descricao("Adquira sua primeira anotação")
+                    .imagem("imagem.png")
+                    .build(),
+            Insignia.builder()
+                    .id(7l)
+                    .nome("Guardião do saber")
+                    .descricao("Preencha 4 anotações")
                     .imagem("imagem.png")
                     .build()
     });
