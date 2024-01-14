@@ -51,25 +51,45 @@ public class Insignia implements Serializable {
                     .descricao("Esteja no TOP 3  do ranking em algum momento")
                     .imagem("imagem.png")
                     .build(),
+        Insignia.builder()
+                    .id(5l)
+                    .nome("Metade da jornada")
+                    .descricao("Consiga 50 pontos")
+                    .imagem("imagem.png")
+                    .build(),
         
         // CADERNO DE ANOTAÇÕES    
         Insignia.builder()
-                    .id(5l)
+                    .id(6l)
                     .nome("Enciclopédia viva")
                     .descricao("Complete o caderno de anotações")
                     .imagem("imagem.png")
                     .build(),
             Insignia.builder()
-                    .id(6l)
+                    .id(7l)
                     .nome("Diário do programador")
                     .descricao("Adquira sua primeira anotação")
                     .imagem("imagem.png")
                     .build(),
             Insignia.builder()
-                    .id(7l)
+                    .id(8l)
                     .nome("Guardião do saber")
                     .descricao("Preencha 4 anotações")
                     .imagem("imagem.png")
-                    .build()
+                    .build(),
+
+        // CONVERSA COM PERSONAGENS
+        Insignia.builder()
+                    .id(9l)
+                    .nome("Saindo da caverna")
+                    .descricao("Complete sua primeira interação com algum personagem")
+                    .imagem("imagem.png")
+                    .build(),
+        Insignia.builder()
+                    .id(10l)
+                    .nome("Tagarela compulsivo")
+                    .descricao("Converse com todos os personagens")
+                    .imagem("imagem.png")
+                    .build()        
     });
 }
