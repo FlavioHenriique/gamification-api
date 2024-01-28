@@ -42,7 +42,24 @@ public class UsuarioService {
         if (!MD5Converter.convertToMd5(senha).equals(usuario.getSenha())){
             throw new IncorrectPasswordException("senha errada");
         }
+
+        preencheInsignias(usuario);
+
         return usuario;
+    }
+
+    private void preencheInsignias(Usuario usuario){
+        var insignias = Insignia.INSIGNIAS;
+
+        insignias.forEach(i-> {
+            usuario.getInsigniasConquistadas()
+                    .stream()
+                    .filter(conquistada-> conquistada.getId() == i.getId())
+                    .findFirst()
+                    .ifPresent(p-> i.setConquistada(true));
+
+        });
+        usuario.setInsigniasConquistadas(insignias);
     }
 
     public List<Usuario> ranking(){
@@ -64,7 +81,9 @@ public class UsuarioService {
             return usuario;
 
         usuario.getInsigniasConquistadas().add(insignia);
-        return repository.save(usuario);
+        repository.save(usuario);
+        preencheInsignias(usuario);
+        return usuario;
     }
 
     private Insignia consultaInsignia(long id){

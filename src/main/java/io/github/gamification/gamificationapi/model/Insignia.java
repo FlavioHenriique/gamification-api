@@ -1,5 +1,6 @@
 package io.github.gamification.gamificationapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,6 +21,8 @@ public class Insignia implements Serializable {
     private String nome;
     private String descricao;
     private String imagem;
+    @Transient
+    private boolean conquistada;
 
     @Transient
     public static final List<Insignia> INSIGNIAS = Arrays.asList(new Insignia[]{
