@@ -23,6 +23,8 @@ public class Insignia implements Serializable {
     private String imagem;
     @Transient
     private boolean conquistada;
+    @Transient
+    private int percentualUsuarios;
 
     @Transient
     public static final List<Insignia> INSIGNIAS = Arrays.asList(new Insignia[]{

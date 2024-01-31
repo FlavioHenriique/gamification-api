@@ -51,15 +51,23 @@ public class UsuarioService {
     private void preencheInsignias(Usuario usuario){
         var insignias = Insignia.INSIGNIAS;
 
+        int totalUsuarios = repository.findAll().size();
         insignias.forEach(i-> {
             usuario.getInsigniasConquistadas()
                     .stream()
                     .filter(conquistada-> conquistada.getId() == i.getId())
                     .findFirst()
-                    .ifPresent(p-> i.setConquistada(true));
+                    .ifPresent(p-> {
+                        i.setConquistada(true);
+                        i.setPercentualUsuarios(percentualDeUsuarios(i.getId(), totalUsuarios));
+                    });
 
         });
         usuario.setInsigniasConquistadas(insignias);
+    }
+
+    private int percentualDeUsuarios(long idInsignia, int totalUsuarios){
+        return (insigniaRepository.contaPercentualUsuarios(idInsignia)*100)/ totalUsuarios;
     }
 
     public List<Usuario> ranking(){
