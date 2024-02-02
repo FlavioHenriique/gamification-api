@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 public class UsuarioService {
@@ -44,8 +45,18 @@ public class UsuarioService {
         }
 
         preencheInsignias(usuario);
-
+        preenchePontuacao(usuario);
         return usuario;
+    }
+
+    private void preenchePontuacao(Usuario usuario) {
+        List<Usuario> ranking = ranking();
+        for (int i = 0; i < ranking.size(); i ++){
+            if (usuario.getId() == ranking.get(i).getId()){
+                usuario.setPosicaoRanking(i+1);
+                break;
+            }
+        }
     }
 
     private void preencheInsignias(Usuario usuario){
@@ -91,6 +102,7 @@ public class UsuarioService {
         usuario.getInsigniasConquistadas().add(insignia);
         repository.save(usuario);
         preencheInsignias(usuario);
+        preenchePontuacao(usuario);
         return usuario;
     }
 

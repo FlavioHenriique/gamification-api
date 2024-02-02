@@ -22,6 +22,8 @@ public class Usuario implements Serializable {
     private String senha;
     private String usuario;
     private long pontuacao;
+    @Transient
+    private long posicaoRanking;
     @Column(nullable = true)
     private boolean visualizouPrimeiraPagina;
     @ElementCollection
