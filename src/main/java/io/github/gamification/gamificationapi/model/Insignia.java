@@ -102,6 +102,13 @@ public class Insignia implements Serializable {
                     .nome("A Skynet é real")
                     .descricao("Converse com Ian, a IA")
                     .imagem("imagem.png")
-                    .build()   
+                    .build(),
+
+        Insignia.builder()
+                    .id(12l)
+                    .nome("Rei da platina")
+                    .descricao("Libere todas as insígnias")
+                    .imagem("imagem.png")
+                    .build()  
     });
 }
