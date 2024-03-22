@@ -2,6 +2,7 @@ package io.github.gamification.gamificationapi.controller;
 
 import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
 import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
+import io.github.gamification.gamificationapi.model.Anotacao;
 import io.github.gamification.gamificationapi.model.Insignia;
 import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.service.UsuarioService;
@@ -47,4 +48,14 @@ public class UsuarioController {
         return ResponseEntity.ok(service.adicionaInsignia(idInsignia, idUsuario));
     }
 
+    @PostMapping("/adicionaAnotacao")
+    public ResponseEntity<Usuario> adicionaAnotacao(@RequestParam("idUsuario") long idUsuario,
+                                                    @RequestParam("idAnotacao") long idAnotacao) throws Exception {
+        return ResponseEntity.ok(service.adicionaAnotacao(idAnotacao, idUsuario));
+    }
+
+    @GetMapping("/anotacoes")
+    public ResponseEntity<List<Anotacao>> obtemAnotacoes(@RequestParam("idUsuario") long idUsuario) throws Exception {
+        return ResponseEntity.ok(service.obtemAnotacoes(idUsuario));
+    }
 }

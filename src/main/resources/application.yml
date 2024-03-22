@@ -45,3 +45,24 @@ personagens:
             - texto: "triplo = numero + numero + numero + numero;"
               id: 4
               correto: false
+
+anotacoes:
+  lista:
+    - id: 1
+      titulo: "COMANDOS DE ENTRADA E SAÍDA"
+      texto: "para papapapapa para pa pa"
+    - id: 2
+      titulo: "CONDICIONAIS"
+      texto: "para papapapapa para pa pa"
+    - id: 3
+      titulo: "COMANDOS DE REPETIÇÃO"
+      texto: "para papapapapa para pa pa"
+    - id: 4
+      titulo: "SUBPROGRAMAS"
+      texto: "para papapapapa para pa pa"
+    - id: 5
+      titulo: "ESTRUTURA DE DADOS"
+      texto: "para papapapapa para pa pa"
+    - id: 6
+      titulo: "PONTEIROS"
+      texto: "para papapapapa para pa pa"

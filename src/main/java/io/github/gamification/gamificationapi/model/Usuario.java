@@ -30,6 +30,7 @@ public class Usuario implements Serializable {
     private List<Insignia> insigniasConquistadas;
     @ElementCollection
     private List<Questao> questoesRespondidas;
-    @ElementCollection
+    @Transient
     private List<Anotacao> anotacoes;
+    private List<Long> idsAnotacoes;
 }

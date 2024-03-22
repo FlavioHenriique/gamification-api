@@ -1,8 +1,10 @@
 package io.github.gamification.gamificationapi.service;
 
+import io.github.gamification.gamificationapi.config.AnotacoesProperties;
 import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
 import io.github.gamification.gamificationapi.exception.UsuarioExistsException;
 import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
+import io.github.gamification.gamificationapi.model.Anotacao;
 import io.github.gamification.gamificationapi.model.Insignia;
 import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.repository.InsigniaRepository;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -23,6 +26,9 @@ public class UsuarioService {
     private UsuarioRepository repository;
     @Autowired
     private InsigniaRepository insigniaRepository;
+
+    @Autowired
+    private AnotacoesProperties anotacoesProperties;
 
     public Usuario save(Usuario usuario) throws Exception {
         if (usuario.getId() <= 0){
@@ -108,5 +114,26 @@ public class UsuarioService {
 
     private Insignia consultaInsignia(long id){
         return insigniaRepository.findById(id).orElseThrow(RuntimeException::new);
+    }
+
+    public Usuario adicionaAnotacao(long idAnotacao, long idUsuario) throws Exception {
+
+        var usuario = find(idUsuario);
+        if (usuario.getIdsAnotacoes() == null) {
+            usuario.setIdsAnotacoes(new ArrayList<>());
+        }
+
+        if (usuario.getIdsAnotacoes().contains(idAnotacao)) {
+            return usuario;
+        }
+        usuario.getIdsAnotacoes().add(idAnotacao);
+        return repository.save(usuario);
+    }
+
+    public List<Anotacao> obtemAnotacoes(long idUsuario) throws Exception {
+        var usuario = find(idUsuario);
+        return anotacoesProperties.getLista().stream()
+                .filter(a -> usuario.getIdsAnotacoes().contains(a.getId()))
+                .collect(Collectors.toList());
     }
 }

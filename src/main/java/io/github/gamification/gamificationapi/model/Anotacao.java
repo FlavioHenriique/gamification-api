@@ -13,11 +13,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 public class Anotacao implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String titulo;
     private String texto;
