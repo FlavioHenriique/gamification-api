@@ -30,6 +30,10 @@ personagens:
           imagem: 1
           opcoesResposta:
             - "Saquei"
+        - mensagem: "Ótimo! Você pode revisar os conteúdos que aprendemos aqui no seu caderno de anotações. Alguns colegas seus podem estar precisando de ajuda, seria interessante procurá-los pelo Campus da universidade e tentar auxiliá-los. Boa sorte!"
+          ultima: true
+          opcoesResposta:
+            - "Finalizar conversa"
       questoes:
         - enunciado: "Agora vamos testar seus conhecimentos: Vamos escrever um programa que leia um número inteiro positivo e calcule o seu triplo. Como você preencheria a linha que está comentada?"
           alternativas:
@@ -45,7 +49,58 @@ personagens:
             - texto: "triplo = numero + numero + numero + numero;"
               id: 4
               correto: false
-
+        - enunciado: "Vamos continuar o exercício. Vamos escrever um programa que leia um valor em polegadas e o converta para centímetros, considerando que uma polegada equivale a 2.54 cm."
+          alternativas:
+            - texto: "centimetros = polegadas x 2.53;"
+              id: 1
+              correto: false
+            - texto: "centimetros = polegadas * 2.54; "
+              id: 2
+              correto: true
+            - texto: "centimetros = polegadas x 2.54;"
+              id: 3
+              correto: false
+            - texto: "centimetros = polegada * 2.54;"
+              id: 4
+              correto: false
+    - id: 2 # ALUNO LUCAS
+      linhasDialogo:
+        - mensagem: "E aí, tudo bem? Meu nome é Lucas. Estou um pouco confuso com condicionais. Você já teve dificuldade em entender quando usar o if, else, else if? O professor Fabiano me deu essa anotação sobre o uso de condicionais."
+          opcoesResposta:
+            - "Posso tentar te ajudar."
+        - mensagem: "Muito obrigado! acho que agora compreendi melhor o uso de condicionais. Lembre-se da anotação que o professor Fabiano nos passou, pode consultá-la sempre que quiser!"
+          opcoesResposta:
+            - "BOA"
+          ultima: true
+      questoes:
+        - enunciado: "Estou meio travado em uma questão, que é a seguinte:  Preciso escrever um programa que leia um número inteiro e verifique se ele é positivo, qual opção abaixo resolveria a questão?"
+          alternativas:
+            - texto: "if (numero > 0) "
+              id: 1
+              correto: true
+            - texto: "if (numero = 0) {"
+              id: 2
+              correto: false
+            - texto: "if (numero < 0) {"
+              id: 3
+              correto: false
+            - texto: "if (numero <= 0) {"
+              id: 4
+              correto: false
+        - enunciado: "Boa! A próxima questão é a seguinte: Temos que escrever um programa que leia um caractere e verifique se o mesmo é uma letra maiúscula, uma letra minúscula, um numeral ou nenhum dos tipos anteriores. Como podemos completar o código que está faltando? "
+          alternativas:
+            - texto: "} else printf(\"Nenhum dos tipos anteriores\"); "
+              id: 1
+              correto: true
+            - texto: "} else if printf(\"Nenhum dos tipos anteriores\");"
+              id: 2
+              correto: false
+            - texto: "} if printf(\"Nenhum dos tipos anteriores\");"
+              id: 3
+              correto: false
+            - texto: "} elif printf(\"Nenhum dos tipos anteriores\");"
+              id: 4
+              correto: false
 anotacoes:
   lista:
     - id: 1

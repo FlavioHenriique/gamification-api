@@ -13,4 +13,6 @@ import java.util.List;
 public class Dialogo {
     private String mensagem;
     private List<String> opcoesResposta;
+    private int imagem;
+    private boolean ultima;
 }
