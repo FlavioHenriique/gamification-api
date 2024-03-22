@@ -1,6 +1,7 @@
 package io.github.gamification.gamificationapi.handler;
 
 import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
+import io.github.gamification.gamificationapi.exception.PersonagemNotFoundException;
 import io.github.gamification.gamificationapi.exception.UsuarioExistsException;
 import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
 import io.github.gamification.gamificationapi.model.ExceptionBody;
@@ -26,6 +27,12 @@ public class APIExceptionHandler {
     @ExceptionHandler(IncorrectPasswordException.class)
     public ResponseEntity handleIncorrectPasswordException(){
         return defaultExceptionMessage("Senha incorreta");
+    }
+
+
+    @ExceptionHandler(PersonagemNotFoundException.class)
+    public ResponseEntity handlePersonagemNotFoundException(){
+        return defaultExceptionMessage("Personagem inexistente");
     }
 
     private ResponseEntity defaultExceptionMessage(String message){

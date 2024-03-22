@@ -1,0 +1,47 @@
+spring:
+    datasource:
+        password: 51280f386264f810be320763b64ef1caabb38ac761dfea32bead374e4ceef40b
+        url: jdbc:postgresql://ec2-3-212-70-5.compute-1.amazonaws.com:5432/d58tcf1jtlm1a3?sslmode=require
+        username: dsnxtxzaryfdem
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true
+springfox:
+    documentation:
+        swagger-ui:
+            enabled: true
+
+personagens:
+  lista:
+    - id: 1 # PROFESSOR FABIANO
+      linhasDialogo:
+        - mensagem: "Olá, jovem! Bem-vindo à aula da Introdução à Programação. Estou aqui para ajudá-lo a mergulhar no mundo da lógica e da codificação. Como posso ajudá-lo?"
+          opcoesResposta:
+            - "Ainda não tenho muito conhecimento sobre lógica de programação, poderia me dar um resumo?"
+        - mensagem: "Basicamente, é a habilidade de resolver problemas de forma sistemática, dividindo-os em passos lógicos e compreensíveis para um computador. É como ensinar o computador a pensar! "
+          opcoesResposta:
+            - "Poderia dar um exemplo de um problema resolvido com lógica de programação?"
+        - mensagem: "Dado dois números inteiros, como podemos calcular a soma desses dois números?"
+          imagem: 1
+          opcoesResposta:
+            - "Saquei"
+      questoes:
+        - enunciado: "Agora vamos testar seus conhecimentos: Vamos escrever um programa que leia um número inteiro positivo e calcule o seu triplo. Como você preencheria a linha que está comentada?"
+          alternativas:
+            - texto: "triplo = numero * 3;"
+              id: 1
+              correto: true
+            - texto: "triplo = numero * 4;"
+              id: 2
+              correto: false
+            - texto: "triplo = numero x 3;"
+              id: 3
+              correto: false
+            - texto: "triplo = numero + numero + numero + numero;"
+              id: 4
+              correto: false
