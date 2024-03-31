@@ -97,11 +97,107 @@ personagens:
         - mensagem: "Show, agora tudo se encaixa! valeu!"
           opcoesResposta:
             - texto: "Até logo"
-    - id: 2 # ALUNA MARCELA
+    - id: 3 # ALUNA MARCELA
       linhasDialogo:
         - mensagem: "Olá jovem, tudo certo? O professor Fabiano me passou umas questões sobre loops, porém não estou conseguindo avançar, parece que estou em um “loop infinito”, hehe… Enfim, pode me ajudar a resolvê-las? Dá uma olhada nessa anotação sobre Loops!"
           opcoesResposta:
             - texto: "Te ajudo sim. Quais as questões?"
+        - mensagem: "Bom, a primeira acredito que esta primeira seja para usar um “for”, porém não tenho certeza. A questão é: Escreva um programa que imprima todos os números inteiros entre 1 e 100 em ordem descendente. Como podemos preencher o trecho que está faltando?"
+          opcoesResposta:
+            - texto: "for (int numero = 1; numero >= 100; numero--) {"
+              id: 1
+              correto: false
+            - texto: "for (int numer = 100; numero >= 1; numero--) {"
+              id: 2
+              correto: false
+            - texto: "for (int numero = 100; numero >= 1; numero--) { "
+              id: 3
+              correto: true
+            - texto: "for (int numero >= 100; numero >= 1; numero--) {"
+              id: 4
+              correto: false
+        - mensagem: "Show! vamos já pra próxima questão: Escreva um programa que solicita ao usuário um número inteiro e imprime a tabuada desse número. O programa deve continuar pedindo números até que o usuário digite 0 para sair. Precisamos completar o trecho faltando:"
+          opcoesResposta:
+            - texto: "while (2) {"
+              id: 1
+              correto: false
+            - texto: "while (TRUE) {"
+              id: 2
+              correto: false
+            - texto: "while (1) {"
+              id: 3
+              correto: true
+            - texto: "while (false) {"
+              id: 4
+              correto: false
+        - mensagem: "A última: Escreva um programa que solicita ao usuário para inserir um número inteiro positivo e, em seguida, exibe uma contagem regressiva desse número até zero. Como as outras, precisamos preencher o trecho que falta: "
+          opcoesResposta:
+            - texto: "} while (numero <= 1);"
+              id: 1
+              correto: false
+            - texto: "} while (numero > 0);"
+              id: 2
+              correto: false
+            - texto: "} while (numero < 0);"
+              id: 3
+              correto: false
+            - texto: "} while (numero <= 0);"
+              id: 4
+              correto: true
+        - mensagem: "Acho que foi isso! conseguimos responder todas as questões, já estou entendendo um pouco mais desses loops. Muito obrigado pela ajuda!"
+          opcoesResposta:
+            - texto: "Tudo certo! vou dar uma olhada nas anotações sobre esse tema também!"
+    - id: 4 # PROFESSORA JACQUELINE
+      linhasDialogo:
+        - mensagem: "Olá, querido aluno! Hoje tenho um desafio de codificação para você. Estou ansiosa para ver como você vai resolver esse problema!"
+          opcoesResposta:
+            - texto: "Manda!"
+        - mensagem: "Primeira questão: Escreva um programa que leia o valor do raio de uma esfera e determine o seu volume, o cálculo deve ser realizado através de um subprograma. Preencha o trecho que falta."
+          opcoesResposta:
+            - texto: "float calcularVolumeEsfra(float raio) {"
+              id: 1
+              correto: false
+            - texto: "float calcularVolumeEsfera(float raio) {"
+              id: 2
+              correto: true
+            - texto: "float calculaVolumeEsfera(float raio) {"
+              id: 3
+              correto: false
+            - texto: "float calcularVolumeEsfera(float reio) {"
+              id: 4
+              correto: false
+        - mensagem: "Boa, garoto. Agora a próxima questão é a seguinte: Escreva um programa que leia dois números inteiros M e N e verifique se N é múltiplo de M. Esta verificação deve ser realizada através de um subprograma. Já sabe o esquema né? Precisamos preencher o trecho comentado."
+          opcoesResposta:
+            - texto: "if (verificaMultiplo(M, N)) {"
+              id: 1
+              correto: false
+            - texto: "if (verificarMultiplo(M, M)) {"
+              id: 2
+              correto: false
+            - texto: "if (verificarMultiplo(A, N)) {"
+              id: 3
+              correto: false
+            - texto: "if (verificarMultiplo(M, N)) {"
+              id: 4
+              correto: true
+        - mensagem: "Muito bem jovem, você agora já tem uma ideia de como usar subprogramas quando estiver programando. Continue praticando!"
+          opcoesResposta:
+            - texto: "Obrigado professora!"
+    - id: 5 # IAN A IA
+      linhasDialogo:
+        - mensagem: "Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?"
+          opcoesResposta:
+            - texto: "Qual conteúdo de programação você teria para me passar?"
+        - mensagem: "Você já explorou estruturas de dados? Elas são como as ferramentas de um programador, permitindo organizar e manipular dados de maneira eficiente. Listas, filas, pilhas... há tantas opções para otimizar seus algoritmos e resolver problemas de forma elegante!"
+          opcoesResposta:
+            - texto: "Pilha? como assim?"
+            - texto: "Que tipo de fila é essa?"
+            - texto: "Lista de quê?"
+            - texto: "OK, vamos praticar!"
+        - mensagem: "PILHA - Sabe, pilhas são como uma pilha de pratos: o último prato colocado é o primeiro a ser retirado. Elas são ótimas para lidar com operações de 'último a entrar, primeiro a sair', como desfazer ações ou percorrer uma árvore de maneira recursiva!"
+        - mensagem: "FILA - Pense em filas como uma linha de supermercado: o primeiro a chegar é o primeiro a ser atendido. Elas são perfeitas para simular situações da vida real, como processos em um sistema operacional ou pedidos em um restaurante movimentado!"
+        - mensagem: "LISTA - Listas são como contêineres flexíveis, onde você pode armazenar uma variedade de dados e acessá-los facilmente. Elas são essenciais para organizar informações em ordem sequencial e facilitar a manipulação de dados em seus programas."
+        
 anotacoes:
   lista:
     - id: 1
