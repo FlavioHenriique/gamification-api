@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 public class Dialogo {
     private String mensagem;
-    private List<String> opcoesResposta;
+    private List<Alternativa> opcoesResposta;
     private int imagem;
     private boolean ultima;
 }

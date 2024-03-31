@@ -3,16 +3,11 @@ package io.github.gamification.gamificationapi.service;
 import io.github.gamification.gamificationapi.config.PersonagensProperties;
 import io.github.gamification.gamificationapi.exception.PersonagemNotFoundException;
 import io.github.gamification.gamificationapi.model.Personagem;
-import io.github.gamification.gamificationapi.model.Questao;
 import io.github.gamification.gamificationapi.model.Resposta;
-import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.repository.RespostaRepository;
 import io.github.gamification.gamificationapi.request.SalvaRespostaRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PersonagemService {

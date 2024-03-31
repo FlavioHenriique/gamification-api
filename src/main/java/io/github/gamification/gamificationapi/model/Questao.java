@@ -18,20 +18,8 @@ public class Questao implements Serializable {
     private long id;
     private String enunciado;
     private List<Alternativa> alternativas;
-
     private boolean acertou;
     private List<Dialogo> linhasDialogo;
-
-    @Builder
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static  class Alternativa implements Serializable {
-        private long id;
-        private String texto;
-        private boolean correta;
-    }
 }
 
 

@@ -13,6 +13,5 @@ import java.util.List;
 public class Personagem {
     private int id;
     private List<Dialogo> linhasDialogo;
-    private List<Questao> questoes;
 
 }
