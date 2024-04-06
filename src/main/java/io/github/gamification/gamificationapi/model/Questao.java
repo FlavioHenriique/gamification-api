@@ -1,11 +1,8 @@
 package io.github.gamification.gamificationapi.model;
 
-import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 @Builder

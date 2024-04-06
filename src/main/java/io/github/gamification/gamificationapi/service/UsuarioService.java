@@ -1,6 +1,7 @@
 package io.github.gamification.gamificationapi.service;
 
 import io.github.gamification.gamificationapi.config.AnotacoesProperties;
+import io.github.gamification.gamificationapi.config.InsigniaProperties;
 import io.github.gamification.gamificationapi.exception.IncorrectPasswordException;
 import io.github.gamification.gamificationapi.exception.UsuarioExistsException;
 import io.github.gamification.gamificationapi.exception.UsuarioNotFoundException;
@@ -29,6 +30,9 @@ public class UsuarioService {
 
     @Autowired
     private AnotacoesProperties anotacoesProperties;
+
+    @Autowired
+    private InsigniaProperties insigniaProperties;
 
     public Usuario save(Usuario usuario) throws Exception {
         if (usuario.getId() <= 0){
@@ -66,7 +70,7 @@ public class UsuarioService {
     }
 
     private void preencheInsignias(Usuario usuario){
-        var insignias = Insignia.INSIGNIAS;
+        var insignias = insigniaProperties.getLista();
 
         int totalUsuarios = repository.findAll().size();
         insignias.forEach(i-> {
@@ -93,7 +97,7 @@ public class UsuarioService {
 
     public Usuario adicionaInsignia(long idInsignia, long id) throws Exception {
         if (insigniaRepository.findAll().isEmpty()){
-            insigniaRepository.saveAll(Insignia.INSIGNIAS);
+            insigniaRepository.saveAll(insigniaProperties.getLista());
         }
 
         var usuario = find(id);

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,9 +16,9 @@ public class Resposta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @OneToOne
-    private Usuario usuario;
+    private long usuario_id;
     private int idPersonagem;
     private int idQuestao;
     private boolean correto;
+    private LocalDateTime momento;
 }

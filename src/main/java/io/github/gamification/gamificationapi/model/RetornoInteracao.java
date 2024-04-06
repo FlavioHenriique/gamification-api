@@ -1,12 +1,17 @@
 package io.github.gamification.gamificationapi.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class RetornoInteracao {
+    private List<Insignia> insigniasLiberadas;
+    private List<Anotacao> anotacoesLiberadas;
 
 }

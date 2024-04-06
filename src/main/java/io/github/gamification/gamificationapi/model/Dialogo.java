@@ -1,6 +1,5 @@
 package io.github.gamification.gamificationapi.model;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 
 import java.util.List;

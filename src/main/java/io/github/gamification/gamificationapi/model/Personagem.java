@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Personagem {
     private int id;
+    private String nome;
     private List<Dialogo> linhasDialogo;
 
 }

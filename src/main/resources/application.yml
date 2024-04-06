@@ -18,8 +18,9 @@ springfox:
 personagens:
   lista:
     - id: 1 # PROFESSOR FABIANO
+      nome: "Fabiano"
       linhasDialogo:
-        - mensagem: "Olá, jovem! Bem-vindo à aula da Introdução à Programação. Estou aqui para ajudá-lo a mergulhar no mundo da lógica e da codificação. Como posso ajudá-lo?"
+        - mensagem: "Olá, jovem! Bem-vindo à aula da Introdução à Programação. Sou o professor Fabiano, estou aqui para ajudá-lo a mergulhar no mundo da lógica e da codificação. Como posso ajudá-lo?"
           opcoesResposta:
             - texto: "Ainda não tenho muito conhecimento sobre lógica de programação, poderia me dar um resumo?"
         - mensagem: "Basicamente, é a habilidade de resolver problemas de forma sistemática, dividindo-os em passos lógicos e compreensíveis para um computador. É como ensinar o computador a pensar! "
@@ -62,6 +63,7 @@ personagens:
             - texto: "Finalizar conversa"
 
     - id: 2 # ALUNO LUCAS
+      nome: "Lucas"
       linhasDialogo:
         - mensagem: "E aí, tudo bem? Meu nome é Lucas. Estou um pouco confuso com condicionais. Você já teve dificuldade em entender quando usar o if, else, else if? O professor Fabiano me deu essa anotação sobre o uso de condicionais."
           opcoesResposta:
@@ -98,8 +100,9 @@ personagens:
           opcoesResposta:
             - texto: "Até logo"
     - id: 3 # ALUNA MARCELA
+      nome: "Marcela"
       linhasDialogo:
-        - mensagem: "Olá jovem, tudo certo? O professor Fabiano me passou umas questões sobre loops, porém não estou conseguindo avançar, parece que estou em um “loop infinito”, hehe… Enfim, pode me ajudar a resolvê-las? Dá uma olhada nessa anotação sobre Loops!"
+        - mensagem: "Olá jovem, tudo certo? Sou a Marcela, o professor Fabiano me passou umas questões sobre loops, porém não estou conseguindo avançar, parece que estou em um “loop infinito”, hehe… Enfim, pode me ajudar a resolvê-las? Dá uma olhada nessa anotação sobre Loops!"
           opcoesResposta:
             - texto: "Te ajudo sim. Quais as questões?"
         - mensagem: "Bom, a primeira acredito que esta primeira seja para usar um “for”, porém não tenho certeza. A questão é: Escreva um programa que imprima todos os números inteiros entre 1 e 100 em ordem descendente. Como podemos preencher o trecho que está faltando?"
@@ -148,8 +151,9 @@ personagens:
           opcoesResposta:
             - texto: "Tudo certo! vou dar uma olhada nas anotações sobre esse tema também!"
     - id: 4 # PROFESSORA JACQUELINE
+      nome: "Jacqueline"
       linhasDialogo:
-        - mensagem: "Olá, querido aluno! Hoje tenho um desafio de codificação para você. Estou ansiosa para ver como você vai resolver esse problema!"
+        - mensagem: "Olá, querido aluno! Sou a Jacqueline, mas pode me chamar de Jack! Hoje tenho um desafio de codificação para você. Estou ansiosa para ver como você vai resolver esse problema!"
           opcoesResposta:
             - texto: "Manda!"
         - mensagem: "Primeira questão: Escreva um programa que leia o valor do raio de uma esfera e determine o seu volume, o cálculo deve ser realizado através de um subprograma. Preencha o trecho que falta."
@@ -184,6 +188,7 @@ personagens:
           opcoesResposta:
             - texto: "Obrigado professora!"
     - id: 5 # IAN A IA
+      nome: "Ian"
       linhasDialogo:
         - mensagem: "Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?"
           opcoesResposta:
@@ -218,3 +223,65 @@ anotacoes:
     - id: 6
       titulo: "PONTEIROS"
       texto: "para papapapapa para pa pa"
+
+insignias:
+  lista:
+    - id: 1
+      nome: Iniciante promissor
+      descricao: Acerte as 3 primeiras questões
+      imagem: imagem.png
+
+    - id: 2
+      nome: Programador supremo
+      descricao: Acerte todas as questões
+      imagem: imagem.png
+
+    - id: 3
+      nome: Monitor de algoritmos
+      descricao: Lidere o ranking em algum momento
+      imagem: imagem.png
+
+    - id: 4
+      nome: Cavaleiro de bronze
+      descricao: Esteja no TOP 3 do ranking em algum momento
+      imagem: imagem.png
+
+    - id: 5
+      nome: Metade da jornada
+      descricao: Consiga 50 pontos
+      imagem: imagem.png
+
+    - id: 6
+      nome: Enciclopédia viva
+      descricao: Complete o caderno de anotações
+      imagem: imagem.png
+
+    - id: 7
+      nome: Diário do programador
+      descricao: Adquira sua primeira anotação
+      imagem: imagem.png
+
+    - id: 8
+      nome: Guardião do saber
+      descricao: Preencha 4 anotações
+      imagem: imagem.png
+
+    - id: 9
+      nome: Saindo da caverna
+      descricao: Complete sua primeira interação com algum personagem
+      imagem: imagem.png
+
+    - id: 10
+      nome: Tagarela compulsivo
+      descricao: Converse com todos os personagens
+      imagem: imagem.png
+
+    - id: 11
+      nome: A Skynet é real
+      descricao: Converse com Ian, a IA
+      imagem: imagem.png
+
+    - id: 12
+      nome: Rei da platina
+      descricao: Libere todas as insígnias
+      imagem: imagem.png
