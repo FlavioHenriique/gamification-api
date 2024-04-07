@@ -5,20 +5,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Insignia1Strategy extends CheckInsigniaStrategy {
+public class InsigniaSaindoDaCavernaStrategy extends CheckInsigniaStrategy {
 
     @Autowired
     private RespostaRepository repository;
 
+    private final long ID = 9;
+
     @Override
     long getId() {
-        return 1;
+        return this.ID;
     }
 
     @Override
     public boolean checkCondition(long idUsuario) {
-        return repository.findFirst3(idUsuario)
-                .stream()
-                .filter(resposta -> resposta.isCorreto()).count() == 3;
+        return !repository.findAllByIdUsuario(idUsuario)
+                .isEmpty();
     }
 }
