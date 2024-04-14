@@ -28,10 +28,10 @@ personagens:
           opcoesResposta:
             - texto: "Poderia dar um exemplo de um problema resolvido com lógica de programação?"
         - mensagem: "Dado dois números inteiros, como podemos calcular a soma desses dois números?"
-          imagem: 1
           opcoesResposta:
             - texto: "Saquei"
         - mensagem: "Agora vamos testar seus conhecimentos: Vamos escrever um programa que leia um número inteiro positivo e calcule o seu triplo. Como você preencheria a linha que está comentada?"
+          idQuestao: 1
           opcoesResposta:
             - texto: "triplo = numero * 3;"
               id: 1
@@ -46,6 +46,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Vamos continuar o exercício. Vamos escrever um programa que leia um valor em polegadas e o converta para centímetros, considerando que uma polegada equivale a 2.54 cm."
+          idQuestao: 2
           opcoesResposta:
             - texto: "centimetros = polegadas x 2.53;"
               id: 1
@@ -70,6 +71,7 @@ personagens:
           opcoesResposta:
             - texto: "Posso tentar te ajudar."
         - mensagem: "Estou meio travado em uma questão, que é a seguinte:  Preciso escrever um programa que leia um número inteiro e verifique se ele é positivo, qual opção abaixo resolveria a questão?"
+          idQuestao: 3
           opcoesResposta:
             - texto: "if (numero > 0) "
               id: 1
@@ -84,6 +86,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Boa! A próxima questão é a seguinte: Temos que escrever um programa que leia um caractere e verifique se o mesmo é uma letra maiúscula, uma letra minúscula, um numeral ou nenhum dos tipos anteriores. Como podemos completar o código que está faltando? "
+          idQuestao: 4
           opcoesResposta:
             - texto: "} else printf(\"Nenhum dos tipos anteriores\"); "
               id: 1
@@ -107,6 +110,7 @@ personagens:
           opcoesResposta:
             - texto: "Te ajudo sim. Quais as questões?"
         - mensagem: "Bom, a primeira acredito que esta primeira seja para usar um “for”, porém não tenho certeza. A questão é: Escreva um programa que imprima todos os números inteiros entre 1 e 100 em ordem descendente. Como podemos preencher o trecho que está faltando?"
+          idQuestao: 5
           opcoesResposta:
             - texto: "for (int numero = 1; numero >= 100; numero--) {"
               id: 1
@@ -121,6 +125,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Show! vamos já pra próxima questão: Escreva um programa que solicita ao usuário um número inteiro e imprime a tabuada desse número. O programa deve continuar pedindo números até que o usuário digite 0 para sair. Precisamos completar o trecho faltando:"
+          idQuestao: 6
           opcoesResposta:
             - texto: "while (2) {"
               id: 1
@@ -135,6 +140,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "A última: Escreva um programa que solicita ao usuário para inserir um número inteiro positivo e, em seguida, exibe uma contagem regressiva desse número até zero. Como as outras, precisamos preencher o trecho que falta: "
+          idQuestao: 7
           opcoesResposta:
             - texto: "} while (numero <= 1);"
               id: 1
@@ -158,6 +164,7 @@ personagens:
           opcoesResposta:
             - texto: "Manda!"
         - mensagem: "Primeira questão: Escreva um programa que leia o valor do raio de uma esfera e determine o seu volume, o cálculo deve ser realizado através de um subprograma. Preencha o trecho que falta."
+          idQuestao: 8
           opcoesResposta:
             - texto: "float calcularVolumeEsfra(float raio) {"
               id: 1
@@ -172,6 +179,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Boa, garoto. Agora a próxima questão é a seguinte: Escreva um programa que leia dois números inteiros M e N e verifique se N é múltiplo de M. Esta verificação deve ser realizada através de um subprograma. Já sabe o esquema né? Precisamos preencher o trecho comentado."
+          idQuestao: 9
           opcoesResposta:
             - texto: "if (verificaMultiplo(M, N)) {"
               id: 1
@@ -230,59 +238,59 @@ insignias:
     - id: 1
       nome: Iniciante promissor
       descricao: Acerte as 3 primeiras questões
-      imagem: imagem.png
+      imagem: insignia_1.png
 
     - id: 2
       nome: Programador supremo
       descricao: Acerte todas as questões
-      imagem: imagem.png
+      imagem: insignia_2.png
 
     - id: 3
       nome: Monitor de algoritmos
       descricao: Lidere o ranking em algum momento
-      imagem: imagem.png
+      imagem: insignia_3.png
 
     - id: 4
       nome: Cavaleiro de bronze
       descricao: Esteja no TOP 3 do ranking em algum momento
-      imagem: imagem.png
+      imagem: insignia_4.png
 
     - id: 5
       nome: Metade da jornada
       descricao: Consiga 50 pontos
-      imagem: imagem.png
+      imagem: insignia_5.png
 
     - id: 6
       nome: Enciclopédia viva
       descricao: Complete o caderno de anotações
-      imagem: imagem.png
+      imagem: insignia_6.png
 
     - id: 7
       nome: Diário do programador
       descricao: Adquira sua primeira anotação
-      imagem: imagem.png
+      imagem: insignia_7.png
 
     - id: 8
       nome: Guardião do saber
       descricao: Preencha 4 anotações
-      imagem: imagem.png
+      imagem: insignia_8.png
 
     - id: 9
       nome: Saindo da caverna
       descricao: Complete sua primeira interação com algum personagem
-      imagem: imagem.png
+      imagem: insignia_9.png
 
     - id: 10
       nome: Tagarela compulsivo
       descricao: Converse com todos os personagens
-      imagem: imagem.png
+      imagem: insignia_10.png
 
     - id: 11
       nome: A Skynet é real
       descricao: Converse com Ian, a IA
-      imagem: imagem.png
+      imagem: insignia_11.png
 
     - id: 12
       nome: Rei da platina
       descricao: Libere todas as insígnias
-      imagem: imagem.png
+      imagem: insignia_12.png

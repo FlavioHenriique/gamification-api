@@ -14,4 +14,5 @@ public class Dialogo {
     private List<Alternativa> opcoesResposta;
     private int imagem;
     private boolean ultima;
+    private int idQuestao;
 }

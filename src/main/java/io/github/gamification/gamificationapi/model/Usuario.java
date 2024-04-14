@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -27,10 +28,10 @@ public class Usuario implements Serializable {
     @Column(nullable = true)
     private boolean visualizouPrimeiraPagina;
     @ElementCollection
-    private List<Insignia> insigniasConquistadas;
+    private List<Insignia> insigniasConquistadas = new ArrayList<>();
     @ElementCollection
-    private List<Questao> questoesRespondidas;
+    private List<Questao> questoesRespondidas = new ArrayList<>();
     @Transient
-    private List<Anotacao> anotacoes;
-    private List<Long> idsAnotacoes;
+    private List<Anotacao> anotacoes = new ArrayList<>();
+    private List<Long> idsAnotacoes = new ArrayList<>();
 }

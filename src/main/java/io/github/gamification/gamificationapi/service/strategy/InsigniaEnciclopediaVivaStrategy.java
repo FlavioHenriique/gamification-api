@@ -5,6 +5,8 @@ import io.github.gamification.gamificationapi.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class InsigniaEnciclopediaVivaStrategy extends CheckInsigniaStrategy {
 
@@ -23,7 +25,11 @@ public class InsigniaEnciclopediaVivaStrategy extends CheckInsigniaStrategy {
 
     @Override
     public boolean checkCondition(long idUsuario) {
-       return repository.findById(idUsuario).get().getIdsAnotacoes().size() == getQtdAnotacoes();
+        List<Long> idsAnotacoes = repository.findById(idUsuario).get().getIdsAnotacoes();
+        if (idsAnotacoes != null){
+            return idsAnotacoes.size() == getQtdAnotacoes();
+        }
+        return false;
     }
 
     private int getQtdAnotacoes(){

@@ -5,6 +5,8 @@ import io.github.gamification.gamificationapi.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class InsigniaDiarioProgramadorStrategy extends CheckInsigniaStrategy {
 
@@ -21,7 +23,10 @@ public class InsigniaDiarioProgramadorStrategy extends CheckInsigniaStrategy {
 
     @Override
     public boolean checkCondition(long idUsuario) {
-       return !repository.findById(idUsuario).get().getIdsAnotacoes().isEmpty();
+        List<Long> idsAnotacoes = repository.findById(idUsuario).get().getIdsAnotacoes();
+       if (idsAnotacoes != null)
+           return !idsAnotacoes.isEmpty();
+       return false;
     }
 
 }
