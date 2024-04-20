@@ -44,9 +44,16 @@ public class PersonagemService {
         repository.save(resposta);
 
         var usuario = usuarioService.find(request.getIdUsuario()) ;
-        var insignias = usuario.getInsigniasConquistadas().stream().map(i-> i.getId()).toList();
-        return RetornoInteracao.builder()
-                .insigniasLiberadas(insigniaService.verificaInsigniasLiberadas(insignias, usuario.getId()))
-                .build();
+        var insignias = usuario.getInsignias().stream().map(i-> i.getId()).toList();
+        var insigniasLiberadas = insigniaService.verificaInsigniasLiberadas(insignias, usuario.getId());
+        insigniasLiberadas.forEach(i-> {
+            try {
+                usuarioService.adicionaInsignia(i.getId(), usuario.getId());
+            } catch (Exception e) {
+                System.out.println("Erro liberando insignia: " + e.getMessage());
+                throw new RuntimeException(e);
+            }
+        });
+        return RetornoInteracao.builder().insigniasLiberadas(insigniasLiberadas).build();
     }
 }

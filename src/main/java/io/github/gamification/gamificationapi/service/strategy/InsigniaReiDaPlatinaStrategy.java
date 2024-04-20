@@ -26,7 +26,7 @@ public class InsigniaReiDaPlatinaStrategy extends CheckInsigniaStrategy {
 
     @Override
     public boolean checkCondition(long idUsuario) {
-        return repository.findById(idUsuario).get().getInsigniasConquistadas().size() == getQtdInsignias();
+        return repository.findById(idUsuario).get().getInsignias().size() == getQtdInsignias();
     }
 
     private int getQtdInsignias() {

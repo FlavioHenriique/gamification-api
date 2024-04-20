@@ -36,6 +36,7 @@ public class InsigniaProgramadorSupremoStrategy extends CheckInsigniaStrategy {
                 .stream()
                 .flatMap( p-> p.getLinhasDialogo().stream())
                 .toList()
-                .stream().filter(dialogo -> dialogo.getOpcoesResposta().size() >= 4).toList().size();
+                .stream().filter(dialogo -> dialogo.getOpcoesResposta() != null &&
+                        dialogo.getOpcoesResposta().size() >= 4).toList().size();
     }
 }

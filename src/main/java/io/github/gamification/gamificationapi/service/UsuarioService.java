@@ -9,6 +9,7 @@ import io.github.gamification.gamificationapi.model.Anotacao;
 import io.github.gamification.gamificationapi.model.Insignia;
 import io.github.gamification.gamificationapi.model.Usuario;
 import io.github.gamification.gamificationapi.repository.InsigniaRepository;
+import io.github.gamification.gamificationapi.repository.RespostaRepository;
 import io.github.gamification.gamificationapi.repository.UsuarioRepository;
 import io.github.gamification.gamificationapi.utils.MD5Converter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class UsuarioService {
     @Autowired
     private InsigniaProperties insigniaProperties;
 
+    @Autowired
+    private RespostaRepository respostaRepository;
+
     public Usuario save(Usuario usuario) throws Exception {
         if (usuario.getId() <= 0){
             var optional = repository.findByEmail(usuario.getEmail());
@@ -56,7 +60,12 @@ public class UsuarioService {
 
         preencheInsignias(usuario);
         preenchePontuacao(usuario);
+        preencheRespostas(usuario);
         return usuario;
+    }
+
+    private void preencheRespostas(Usuario usuario) {
+        usuario.setRespostas(respostaRepository.findAllByIdUsuario(usuario.getId()));
     }
 
     private void preenchePontuacao(Usuario usuario) {
@@ -74,7 +83,7 @@ public class UsuarioService {
 
         int totalUsuarios = repository.findAll().size();
         insignias.forEach(i-> {
-            usuario.getInsigniasConquistadas()
+            usuario.getInsignias()
                     .stream()
                     .filter(conquistada-> conquistada.getId() == i.getId())
                     .findFirst()
@@ -84,7 +93,7 @@ public class UsuarioService {
                     });
 
         });
-        usuario.setInsigniasConquistadas(insignias);
+        usuario.setInsignias(insignias);
     }
 
     private int percentualDeUsuarios(long idInsignia, int totalUsuarios){
@@ -101,15 +110,13 @@ public class UsuarioService {
         }
 
         var usuario = find(id);
-        var insignia = consultaInsignia(idInsignia);
 
-        if (!usuario.getInsigniasConquistadas()
+        if (!usuario.getInsignias()
                 .stream()
                 .filter(i-> i.getId() == idInsignia)
                 .collect(Collectors.toList()).isEmpty())
             return usuario;
 
-        usuario.getInsigniasConquistadas().add(insignia);
         repository.save(usuario);
         preencheInsignias(usuario);
         preenchePontuacao(usuario);
