@@ -28,10 +28,14 @@ public class Usuario implements Serializable {
     @Column(nullable = true)
     private boolean visualizouPrimeiraPagina;
     @ElementCollection
+    @Builder.Default
     private List<Insignia> insignias = new ArrayList<>();
     @ElementCollection
+    @Builder.Default
     private List<Resposta> respostas = new ArrayList<>();
     @Transient
+    @Builder.Default
     private List<Anotacao> anotacoes = new ArrayList<>();
+    @Builder.Default
     private List<Long> idsAnotacoes = new ArrayList<>();
 }
