@@ -15,4 +15,8 @@ public interface RespostaRepository extends JpaRepository<Resposta, Long> {
     @Query(value = "SELECT * from RESPOSTA where usuario_Id = :idUsuario",
             nativeQuery = true)
     List<Resposta> findAllByIdUsuario(long idUsuario);
+
+    @Query(value = "SELECT * from RESPOSTA where usuario_Id = :idUsuario and id_personagem = :idPersonagem order by id_questao desc",
+            nativeQuery = true)
+    List<Resposta> findAllByIdUsuarioAndPersonagem(long idUsuario, int idPersonagem);
 }

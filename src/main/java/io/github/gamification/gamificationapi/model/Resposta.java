@@ -18,7 +18,8 @@ public class Resposta {
     private long id;
     private long usuario_id;
     private int idPersonagem;
-    private int idQuestao;
+    private String questao;
     private boolean correto;
     private LocalDateTime momento;
+    private int idQuestao;
 }

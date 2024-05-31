@@ -27,6 +27,7 @@ public class InsigniaTagarelaCompulsivoStrategy extends CheckInsigniaStrategy {
         return repository.findAllByIdUsuario(idUsuario)
                 .stream()
                 .map(Resposta::getIdPersonagem)
+                .distinct()
                 .toList().size() == getQtdPersonagens();
     }
 

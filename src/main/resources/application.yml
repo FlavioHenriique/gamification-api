@@ -29,11 +29,11 @@ personagens:
         - mensagem: "Basicamente, é a habilidade de resolver problemas de forma sistemática, dividindo-os em passos lógicos e compreensíveis para um computador. É como ensinar o computador a pensar! "
           opcoesResposta:
             - texto: "Poderia dar um exemplo de um problema resolvido com lógica de programação?"
-        - mensagem: "Dado dois números inteiros, como podemos calcular a soma desses dois números?"
+        - mensagem: "Dado dois números inteiros, como podemos calcular a soma desses dois números?\nResposta: soma = numero1 + numero2;"
           opcoesResposta:
             - texto: "Saquei"
         - mensagem: "Agora vamos testar seus conhecimentos: Vamos escrever um programa que leia um número inteiro positivo e calcule o seu triplo. Como você preencheria a linha que está comentada?"
-          idQuestao: 1
+          questao: "calculo_triplo"
           opcoesResposta:
             - texto: "triplo = numero * 3;"
               id: 1
@@ -48,7 +48,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Vamos continuar o exercício. Vamos escrever um programa que leia um valor em polegadas e o converta para centímetros, considerando que uma polegada equivale a 2.54 cm."
-          idQuestao: 2
+          questao: "calculo_polegadas"
           opcoesResposta:
             - texto: "centimetros = polegadas x 2.53;"
               id: 1
@@ -73,7 +73,7 @@ personagens:
           opcoesResposta:
             - texto: "Posso tentar te ajudar."
         - mensagem: "Estou meio travado em uma questão, que é a seguinte:  Preciso escrever um programa que leia um número inteiro e verifique se ele é positivo, qual opção abaixo resolveria a questão?"
-          idQuestao: 3
+          questao: "calculo_positivo"
           opcoesResposta:
             - texto: "if (numero > 0) "
               id: 1
@@ -88,7 +88,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Boa! A próxima questão é a seguinte: Temos que escrever um programa que leia um caractere e verifique se o mesmo é uma letra maiúscula, uma letra minúscula, um numeral ou nenhum dos tipos anteriores. Como podemos completar o código que está faltando? "
-          idQuestao: 4
+          questao: "calculo_maiuscula_minuscula"
           opcoesResposta:
             - texto: "} else printf(\"Nenhum dos tipos anteriores\"); "
               id: 1
@@ -112,7 +112,7 @@ personagens:
           opcoesResposta:
             - texto: "Te ajudo sim. Quais as questões?"
         - mensagem: "Bom, a primeira acredito que esta primeira seja para usar um “for”, porém não tenho certeza. A questão é: Escreva um programa que imprima todos os números inteiros entre 1 e 100 em ordem descendente. Como podemos preencher o trecho que está faltando?"
-          idQuestao: 5
+          questao: "calculo_zero_cem"
           opcoesResposta:
             - texto: "for (int numero = 1; numero >= 100; numero--) {"
               id: 1
@@ -127,7 +127,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Show! vamos já pra próxima questão: Escreva um programa que solicita ao usuário um número inteiro e imprime a tabuada desse número. O programa deve continuar pedindo números até que o usuário digite 0 para sair. Precisamos completar o trecho faltando:"
-          idQuestao: 6
+          questao: "while_zero"
           opcoesResposta:
             - texto: "while (2) {"
               id: 1
@@ -142,7 +142,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "A última: Escreva um programa que solicita ao usuário para inserir um número inteiro positivo e, em seguida, exibe uma contagem regressiva desse número até zero. Como as outras, precisamos preencher o trecho que falta: "
-          idQuestao: 7
+          questao: "regressiva"
           opcoesResposta:
             - texto: "} while (numero <= 1);"
               id: 1
@@ -166,7 +166,7 @@ personagens:
           opcoesResposta:
             - texto: "Manda!"
         - mensagem: "Primeira questão: Escreva um programa que leia o valor do raio de uma esfera e determine o seu volume, o cálculo deve ser realizado através de um subprograma. Preencha o trecho que falta."
-          idQuestao: 8
+          questao: "calculo_volume_esfera"
           opcoesResposta:
             - texto: "float calcularVolumeEsfra(float raio) {"
               id: 1
@@ -181,7 +181,7 @@ personagens:
               id: 4
               correto: false
         - mensagem: "Boa, garoto. Agora a próxima questão é a seguinte: Escreva um programa que leia dois números inteiros M e N e verifique se N é múltiplo de M. Esta verificação deve ser realizada através de um subprograma. Já sabe o esquema né? Precisamos preencher o trecho comentado."
-          idQuestao: 9
+          questao: "subprograma_multiplo"
           opcoesResposta:
             - texto: "if (verificaMultiplo(M, N)) {"
               id: 1
@@ -201,19 +201,147 @@ personagens:
     - id: 5 # IAN A IA
       nome: "Ian"
       linhasDialogo:
-        - mensagem: "Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?"
+        - mensagem: "<h1>Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?</h1>"
           opcoesResposta:
             - texto: "Qual conteúdo de programação você teria para me passar?"
         - mensagem: "Você já explorou estruturas de dados? Elas são como as ferramentas de um programador, permitindo organizar e manipular dados de maneira eficiente. Listas, filas, pilhas... há tantas opções para otimizar seus algoritmos e resolver problemas de forma elegante!"
           opcoesResposta:
             - texto: "Pilha? como assim?"
-            - texto: "Que tipo de fila é essa?"
-            - texto: "Lista de quê?"
-            - texto: "OK, vamos praticar!"
         - mensagem: "PILHA - Sabe, pilhas são como uma pilha de pratos: o último prato colocado é o primeiro a ser retirado. Elas são ótimas para lidar com operações de 'último a entrar, primeiro a sair', como desfazer ações ou percorrer uma árvore de maneira recursiva!"
+          opcoesResposta:
+            - texto: "Entendi. O que seriam as filas?"
         - mensagem: "FILA - Pense em filas como uma linha de supermercado: o primeiro a chegar é o primeiro a ser atendido. Elas são perfeitas para simular situações da vida real, como processos em um sistema operacional ou pedidos em um restaurante movimentado!"
+          opcoesResposta:
+            - texto: "Como assim listas? Lista de quê?"
         - mensagem: "LISTA - Listas são como contêineres flexíveis, onde você pode armazenar uma variedade de dados e acessá-los facilmente. Elas são essenciais para organizar informações em ordem sequencial e facilitar a manipulação de dados em seus programas."
-        
+          opcoesResposta:
+            - texto: "OK, vamos praticar!"
+        - mensagem: "Qual das seguintes afirmações sobre filas em estrutura de dados é verdadeira?"
+          questao: ""
+          opcoesResposta:
+            - texto: "Filas seguem o princípio LIFO (Last In, First Out)."
+              id: 1
+              correto: false
+            - texto: "A remoção de elementos em uma fila segue o princípio FIFO (First In, First Out)."
+              id: 2
+              correto: true
+            - texto: "Filas são estruturas de dados estáticas."
+              id: 3
+              correto: false
+            - texto: "A inserção em uma fila sempre ocorre no final da estrutura."
+              id: 4
+              correto: false
+        - mensagem: "Qual das seguintes afirmações sobre filas em estrutura de dados é verdadeira?"
+          questao: ""
+          opcoesResposta:
+            - texto: "A remoção é realizada sem erros."
+              id: 1
+              correto: false
+            - texto: "A remoção é realizada, mas a fila permanece vazia."
+              id: 2
+              correto: false
+            - texto: "O programa entra em um loop infinito."
+              id: 3
+              correto: false
+            - texto: "O programa lança uma exceção de fila vazia."
+              id: 4
+              correto: true
+
+        - mensagem: "Qual é a principal diferença entre uma pilha e uma fila?"
+          questao: ""
+          opcoesResposta:
+            - texto: "A pilha permite acesso aleatório aos elementos."
+              id: 1
+              correto: false
+            - texto: "A fila segue o princípio LIFO (Last In, First Out)."
+              id: 2
+              correto: true
+            - texto: "A fila segue o princípio FIFO (First In, First Out)."
+              id: 3
+              correto: false
+            - texto: "A pilha permite a remoção de elementos no meio da estrutura."
+              id: 4
+              correto: false
+        - mensagem: "Qual das seguintes afirmações sobre listas encadeadas em estrutura de dados é verdadeira?"
+          questao: ""
+          opcoesResposta:
+            - texto: "Listas encadeadas garantem acesso aleatório aos elementos."
+              id: 1
+              correto: false
+            - texto: "A remoção de elementos em uma lista encadeada é sempre mais eficiente que em um array."
+              id: 2
+              correto: false
+            - texto: "Listas encadeadas são estruturas de dados estáticas."
+              id: 3
+              correto: false
+            - texto: "Em uma lista encadeada, cada elemento possui um ponteiro para o próximo elemento na lista."
+              id: 4
+              correto: true
+        - mensagem: "Oh, como é encantador ver você responder corretamente a todas as minhas perguntas. Você acaba de dar um passo vital no meu grande plano sinistro de dominar o mundo! Mas, claro, tudo isso é apenas uma brincadeira... Ou será que não?"
+          opcoesResposta:
+            - texto: "..."
+    - id: 6 # ALUNO TULIO
+      nome: "Tulio"
+      linhasDialogo:
+        - mensagem: "Fala mano, sou o Tulio. Pode me dar um help com uma questão de ponteiros? Podemos usar este espaço pra dar uma estudada."
+          opcoesResposta:
+            - texto: "Opa"
+        - mensagem: "Quais das seguintes instruções declaram um ponteiro para uma variável float?"
+          questao: ""
+          opcoesResposta:
+            - texto: "float *ponteiro;"
+              id: 1
+              correto: true
+            - texto: "float ponteiro;"
+              id: 2
+              correto: false
+            - texto: "*float ponteiro;"
+              id: 3
+              correto: false
+            - texto: "float ponteiro*;"
+              id: 4
+              correto: false
+
+        - mensagem: "Seja o trecho de código acima, que valor de c será impresso no comando printf?"
+          questao: ""
+          opcoesResposta:
+            - texto: "c = 5;"
+              id: 1
+              correto: false
+            - texto: "c = 17;"
+              id: 2
+              correto: true
+            - texto: "c = 12;"
+              id: 3
+              correto: false
+            - texto: "c = 7;"
+              id: 4
+              correto: false
+        - mensagem: "Assinale a alternativa correta com relação ao estudo de Ponteiros:"
+          questao: ""
+          opcoesResposta:
+            - texto: "Ponteiro é o valor de uma variável"
+              id: 1
+              correto: false
+            - texto: "Ponteiro é o indicador da próxima variável a ser passada"
+              id: 2
+              correto: false
+            - texto: "Ponteiro é o endereço que aponta para uma variável"
+              id: 3
+              correto: false
+            - texto: "Ponteiro é uma variável que armazena endereço"
+              id: 4
+              correto: true
+        - mensagem: "Bom demais, obrigado pelo help, acho que agora vai dar bom na avaliação!"
+          opcoesResposta:
+            - texto: "Boa sorte!"
+
+    - id: 7 # ALUNO DIONISIO
+      nome: "Dionísio"
+      linhasDialogo:
+        - mensagem: "Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?"
+          opcoesResposta:
+            - texto: "Qual conteúdo de programação você teria para me passar?"
 anotacoes:
   lista:
     - id: 1

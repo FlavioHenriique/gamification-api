@@ -9,7 +9,7 @@ import java.util.List;
 public interface InsigniaRepository extends JpaRepository<Insignia, Long> {
 
     @Query(
-            value = "SELECT count(*) from usuario_insignias_conquistadas where insignias_conquistadas_id  = ?1",
+            value = "SELECT count(*) from usuario_insignias where insignias_id  = ?1",
             nativeQuery = true
     )
     int contaPercentualUsuarios(long id);

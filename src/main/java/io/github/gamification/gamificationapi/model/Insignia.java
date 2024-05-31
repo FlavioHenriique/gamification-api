@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 public class Insignia implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nome;
     private String descricao;

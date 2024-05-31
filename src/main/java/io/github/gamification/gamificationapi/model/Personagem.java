@@ -14,5 +14,6 @@ public class Personagem {
     private int id;
     private String nome;
     private List<Dialogo> linhasDialogo;
+    private int ultimaResposta;
 
 }

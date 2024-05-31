@@ -21,8 +21,9 @@ public class PersonagemController {
     private PersonagemService service;
 
     @GetMapping
-    public ResponseEntity<Personagem> findById(@RequestParam("idPersonagem") int id) throws PersonagemNotFoundException {
-        return ResponseEntity.ok(service.findDadosPersonagem(id));
+    public ResponseEntity<Personagem> findById(@RequestParam("idPersonagem") int id,
+                                               @RequestParam("idUsuario") long idUsuario) throws PersonagemNotFoundException {
+        return ResponseEntity.ok(service.findDadosPersonagem(id, idUsuario));
     }
 
     @PostMapping

@@ -105,10 +105,10 @@ public class UsuarioService {
     }
 
     public Usuario adicionaInsignia(long idInsignia, long id) throws Exception {
-        if (insigniaRepository.findAll().isEmpty()){
+        if (insigniaRepository.findAll().size() != insigniaProperties.getLista().size()){
             insigniaRepository.saveAll(insigniaProperties.getLista());
         }
-
+        var insignia = insigniaProperties.getLista().stream().filter(i-> i.getId() == idInsignia).findFirst().orElseThrow();
         var usuario = find(id);
 
         if (!usuario.getInsignias()
@@ -117,6 +117,7 @@ public class UsuarioService {
                 .collect(Collectors.toList()).isEmpty())
             return usuario;
 
+        usuario.getInsignias().add(insignia);
         repository.save(usuario);
         preencheInsignias(usuario);
         preenchePontuacao(usuario);

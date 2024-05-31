@@ -3,6 +3,7 @@ package io.github.gamification.gamificationapi.service;
 import io.github.gamification.gamificationapi.config.InsigniaProperties;
 import io.github.gamification.gamificationapi.config.PersonagensProperties;
 import io.github.gamification.gamificationapi.exception.PersonagemNotFoundException;
+import io.github.gamification.gamificationapi.model.Dialogo;
 import io.github.gamification.gamificationapi.model.Personagem;
 import io.github.gamification.gamificationapi.model.Resposta;
 import io.github.gamification.gamificationapi.model.RetornoInteracao;
@@ -26,12 +27,29 @@ public class PersonagemService {
     @Autowired
     private InsigniaService insigniaService;
 
-    public Personagem findDadosPersonagem(int idPersonagem) throws PersonagemNotFoundException {
-        return personagensProperties.getLista()
+    public Personagem findDadosPersonagem(int idPersonagem, long idUsuario) throws PersonagemNotFoundException {
+        var lista = personagensProperties.getLista().stream().flatMap(item-> item.getLinhasDialogo().stream());
+        int id = 1;
+        for (int i = 0; i < personagensProperties.getLista().size(); i ++){
+            Personagem personagem = personagensProperties.getLista().get(i);
+            for (int k = 0; k < personagem.getLinhasDialogo().size(); k++){
+                if (personagem.getLinhasDialogo().get(k).getOpcoesResposta().size() == 4){
+                    personagem.getLinhasDialogo().get(k).setIdQuestao(id);
+                    id ++;
+                }
+            }
+        }
+        Personagem personagem = personagensProperties.getLista()
                 .stream()
                 .filter(p -> p.getId() == idPersonagem)
                 .findFirst()
                 .orElseThrow(() -> new PersonagemNotFoundException("Personagem não encontrado"));
+
+        var respostasFeitas = repository.findAllByIdUsuarioAndPersonagem(idUsuario, idPersonagem);
+        if (!respostasFeitas.isEmpty()){
+            personagem.setUltimaResposta(respostasFeitas.get(0).getIdQuestao());
+        }
+        return personagem;
     }
 
     public RetornoInteracao salvaResposta(SalvaRespostaRequest request) throws Exception {
@@ -39,7 +57,7 @@ public class PersonagemService {
         resposta.setIdPersonagem(request.getIdPersonagem());
         resposta.setCorreto(request.isCorreto());
         resposta.setMomento(LocalDateTime.now());
-
+        resposta.setIdQuestao(request.getIdQuestao());
         resposta.setUsuario_id(request.getIdUsuario());
         repository.save(resposta);
 
