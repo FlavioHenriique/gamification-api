@@ -13,5 +13,6 @@ import java.util.List;
 public class RetornoInteracao {
     private List<Insignia> insigniasLiberadas;
     private List<Anotacao> anotacoesLiberadas;
+    private Usuario usuario;
 
 }

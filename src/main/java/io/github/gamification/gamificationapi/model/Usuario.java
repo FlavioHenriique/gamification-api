@@ -27,9 +27,7 @@ public class Usuario implements Serializable {
     private long posicaoRanking;
     @Column(nullable = true)
     private boolean visualizouPrimeiraPagina;
-    @OneToMany
-    @Builder.Default
-    private List<Insignia> insignias = new ArrayList<>();
+
     @ElementCollection
     @Builder.Default
     private List<Resposta> respostas = new ArrayList<>();
@@ -38,4 +36,10 @@ public class Usuario implements Serializable {
     private List<Anotacao> anotacoes = new ArrayList<>();
     @Builder.Default
     private List<Long> idsAnotacoes = new ArrayList<>();
+
+    @Transient
+    @Builder.Default
+    private List<Insignia> insignias = new ArrayList<>();
+    @Builder.Default
+    private List<Long> idsInsignias = new ArrayList<>();
 }

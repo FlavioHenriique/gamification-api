@@ -1,24 +1,27 @@
 package io.github.gamification.gamificationapi.service;
 
+import io.github.gamification.gamificationapi.config.AnotacoesProperties;
 import io.github.gamification.gamificationapi.config.InsigniaProperties;
 import io.github.gamification.gamificationapi.config.PersonagensProperties;
 import io.github.gamification.gamificationapi.exception.PersonagemNotFoundException;
-import io.github.gamification.gamificationapi.model.Dialogo;
-import io.github.gamification.gamificationapi.model.Personagem;
-import io.github.gamification.gamificationapi.model.Resposta;
-import io.github.gamification.gamificationapi.model.RetornoInteracao;
+import io.github.gamification.gamificationapi.model.*;
 import io.github.gamification.gamificationapi.repository.RespostaRepository;
 import io.github.gamification.gamificationapi.request.SalvaRespostaRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PersonagemService {
 
     @Autowired
     private PersonagensProperties personagensProperties;
+
+    @Autowired
+    private AnotacoesProperties anotacoesProperties;
     @Autowired
     private UsuarioService usuarioService;
     @Autowired
@@ -62,16 +65,32 @@ public class PersonagemService {
         repository.save(resposta);
 
         var usuario = usuarioService.find(request.getIdUsuario()) ;
-        var insignias = usuario.getInsignias().stream().map(i-> i.getId()).toList();
-        var insigniasLiberadas = insigniaService.verificaInsigniasLiberadas(insignias, usuario.getId());
-        insigniasLiberadas.forEach(i-> {
-            try {
-                usuarioService.adicionaInsignia(i.getId(), usuario.getId());
-            } catch (Exception e) {
-                System.out.println("Erro liberando insignia: " + e.getMessage());
-                throw new RuntimeException(e);
-            }
-        });
-        return RetornoInteracao.builder().insigniasLiberadas(insigniasLiberadas).build();
+        var insigniasLiberadas = insigniaService.verificaInsigniasLiberadas(usuario.getIdsInsignias(), usuario.getId());
+
+        if (!insigniasLiberadas.isEmpty()){
+            List<Long> idInsignias = insigniasLiberadas.stream().map(ins -> ins.getId()).toList();
+            if (usuario.getIdsInsignias() == null)
+                usuario.setIdsInsignias(new ArrayList<>());
+
+            usuario.getIdsInsignias().addAll(idInsignias);
+            usuarioService.save(usuario);
+        }
+        adicionaAnotacao(usuario, request.getIdPersonagem());
+        return RetornoInteracao.builder()
+                .usuario(usuario)
+                .insigniasLiberadas(insigniasLiberadas).build();
+    }
+
+    private void adicionaAnotacao(Usuario usuario, int idPersonagem) throws Exception {
+        Anotacao anotacao = anotacoesProperties
+                .getLista()
+                .stream()
+                .filter(anot-> anot.getId() == idPersonagem).findFirst()
+                .orElseThrow();
+        if (!usuario.getIdsAnotacoes().contains(anotacao.getId())){
+            usuario.getIdsAnotacoes().add(anotacao.getId());
+            usuario.getAnotacoes().add(anotacao);
+            usuarioService.save(usuario);
+        }
     }
 }

@@ -61,9 +61,18 @@ public class UsuarioService {
         preencheInsignias(usuario);
         preenchePontuacao(usuario);
         preencheRespostas(usuario);
+        preencheAnotacoes(usuario);
         return usuario;
     }
 
+    private void preencheAnotacoes(Usuario usuario){
+        List<Anotacao> list = anotacoesProperties
+                .getLista()
+                .stream()
+                .filter(anot -> usuario.getIdsAnotacoes().contains(anot.getId())).toList();
+
+        usuario.setAnotacoes(list);
+    }
     private void preencheRespostas(Usuario usuario) {
         usuario.setRespostas(respostaRepository.findAllByIdUsuario(usuario.getId()));
     }
