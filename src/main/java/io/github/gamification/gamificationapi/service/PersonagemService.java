@@ -64,7 +64,11 @@ public class PersonagemService {
         resposta.setUsuario_id(request.getIdUsuario());
         repository.save(resposta);
 
-        var usuario = usuarioService.find(request.getIdUsuario()) ;
+        var usuario = usuarioService.find(request.getIdUsuario());
+        if (request.isCorreto()){
+            usuario.setPontuacao(usuario.getPontuacao() + 10);
+            usuarioService.save(usuario);
+        }
         var insigniasLiberadas = insigniaService.verificaInsigniasLiberadas(usuario.getIdsInsignias(), usuario.getId());
 
         if (!insigniasLiberadas.isEmpty()){

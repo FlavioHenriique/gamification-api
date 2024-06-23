@@ -92,15 +92,10 @@ public class UsuarioService {
 
         int totalUsuarios = repository.findAll().size();
         insignias.forEach(i-> {
-            usuario.getInsignias()
-                    .stream()
-                    .filter(conquistada-> conquistada.getId() == i.getId())
-                    .findFirst()
-                    .ifPresent(p-> {
-                        i.setConquistada(true);
-                        i.setPercentualUsuarios(percentualDeUsuarios(i.getId(), totalUsuarios));
-                    });
-
+            if (usuario.getIdsInsignias().contains(i.getId())){
+                i.setConquistada(true);
+                i.setPercentualUsuarios(percentualDeUsuarios(i.getId(), totalUsuarios));
+            }
         });
         usuario.setInsignias(insignias);
     }
