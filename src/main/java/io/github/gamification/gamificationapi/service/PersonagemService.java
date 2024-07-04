@@ -48,6 +48,7 @@ public class PersonagemService {
                 .findFirst()
                 .orElseThrow(() -> new PersonagemNotFoundException("Personagem não encontrado"));
 
+        personagem.setUltimaResposta(0);
         var respostasFeitas = repository.findAllByIdUsuarioAndPersonagem(idUsuario, idPersonagem);
         if (!respostasFeitas.isEmpty()){
             personagem.setUltimaResposta(respostasFeitas.get(0).getIdQuestao());
