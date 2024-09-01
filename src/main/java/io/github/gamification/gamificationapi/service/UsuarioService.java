@@ -42,6 +42,10 @@ public class UsuarioService {
         if (usuario.getId() <= 0){
             var optional = repository.findByEmail(usuario.getEmail());
             if (optional.isPresent()){
+                throw new UsuarioExistsException("Email já existe");
+            }
+            optional = repository.findByUsuario(usuario.getUsuario());
+            if (optional.isPresent()){
                 throw new UsuarioExistsException("Usuário já existe");
             }
             usuario.setSenha(MD5Converter.convertToMd5(usuario.getSenha()));
@@ -53,11 +57,25 @@ public class UsuarioService {
         return repository.findById(id).orElseThrow(UsuarioNotFoundException::new);
     }
     public Usuario login(String email, String senha) throws UsuarioNotFoundException, IncorrectPasswordException, NoSuchAlgorithmException {
-        var usuario = repository.findByEmail(email).orElseThrow(UsuarioNotFoundException::new);
+        var optional = repository.findByEmail(email);
+        Usuario usuario = null;
+        if (!optional.isPresent()){
+            usuario = repository.findByUsuario(email).orElseThrow(UsuarioNotFoundException::new);
+        }else {
+            usuario = optional.get();
+        }
+        if (usuario.getIdsInsignias() == null)
+            usuario.setIdsInsignias(new ArrayList<>());
+
         if (!MD5Converter.convertToMd5(senha).equals(usuario.getSenha())){
             throw new IncorrectPasswordException("senha errada");
         }
 
+        usuario = preencheInformacoesUsuario(usuario);
+        return usuario;
+    }
+
+    public Usuario preencheInformacoesUsuario(Usuario usuario){
         preencheInsignias(usuario);
         preenchePontuacao(usuario);
         preencheRespostas(usuario);

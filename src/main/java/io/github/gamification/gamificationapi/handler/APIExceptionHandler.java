@@ -15,8 +15,8 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 public class APIExceptionHandler {
 
     @ExceptionHandler(UsuarioExistsException.class)
-    public ResponseEntity handleUsuarioExistsException(){
-        return defaultExceptionMessage("Email já utilizado");
+    public ResponseEntity handleUsuarioExistsException(UsuarioExistsException e){
+        return defaultExceptionMessage(e.getMessage());
     }
 
     @ExceptionHandler(UsuarioNotFoundException.class)

@@ -82,7 +82,7 @@ public class PersonagemService {
         }
         adicionaAnotacao(usuario, request.getIdPersonagem());
         return RetornoInteracao.builder()
-                .usuario(usuario)
+                .usuario(usuarioService.preencheInformacoesUsuario(usuario))
                 .insigniasLiberadas(insigniasLiberadas).build();
     }
 
