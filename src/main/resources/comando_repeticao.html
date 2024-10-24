@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos de Repetição na Programação em C</title>
+</head>
+<body>
+<h1>Comandos de Repetição na Programação em C</h1>
+
+<p>Os comandos de repetição são usados para executar um bloco de código várias vezes. Na linguagem C, os principais comandos de repetição são o <code>for</code>, <code>while</code> e <code>do...while</code>.</p>
+
+<h2>1. Estrutura <code>for</code></h2>
+<p>A estrutura <code>for</code> é usada quando sabemos com antecedência quantas vezes queremos repetir um bloco de código.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 10; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Número %d\n", i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O loop <code>for</code> inicializa a variável <code>i</code> em 0, verifica a condição <code>i &lt; 10</code> e incrementa <code>i</code> em 1 a cada iteração, executando o bloco de código até que a condição seja falsa.</p>
+
+<h2>2. Estrutura <code>while</code></h2>
+<p>A estrutura <code>while</code> repete um bloco de código enquanto uma condição for verdadeira.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while (i &lt; 10) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Número %d\n", i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O loop <code>while</code> verifica a condição <code>i &lt; 10</code> antes de cada iteração e executa o bloco de código enquanto a condição for verdadeira.</p>
+
+<h2>3. Estrutura <code>do...while</code></h2>
+<p>A estrutura <code>do...while</code> é semelhante ao <code>while</code>, mas verifica a condição após cada iteração, garantindo que o bloco de código seja executado pelo menos uma vez.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;do {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Número %d\n", i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} while (i &lt; 10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O loop <code>do...while</code> executa o bloco de código uma vez antes de verificar a condição <code>i &lt; 10</code> após cada iteração.</p>
+
+</body>
+</html>

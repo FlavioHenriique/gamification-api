@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Subprogramas na Programação em C</h1>
+
+<p>Subprogramas, também conhecidos como funções ou procedimentos, são blocos de código que realizam uma tarefa específica e podem ser chamados a partir de outras partes do programa. Em C, os subprogramas ajudam a organizar e reutilizar o código.</p>
+
+<h2>1. Definição de Função</h2>
+<p>Uma função é definida com um tipo de retorno, um nome e parâmetros opcionais. Aqui está um exemplo de função que soma dois números:</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int soma(int a, int b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+}<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int resultado = soma(5, 3);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Resultado: %d\n", resultado);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>A função <code>soma</code> recebe dois inteiros como parâmetros e retorna a soma deles. No <code>main</code>, a função é chamada com os valores 5 e 3.</p>
+
+<h2>2. Funções sem Retorno (void)</h2>
+<p>Funções que não retornam um valor têm o tipo de retorno <code>void</code>. Elas podem executar ações, como exibir uma mensagem:</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+void saudacao() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Olá, mundo!\n");<br>
+}<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;saudacao();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>A função <code>saudacao</code> não retorna nenhum valor e simplesmente imprime "Olá, mundo!".</p>
+
+<h2>3. Passagem de Parâmetros</h2>
+<p>Os parâmetros podem ser passados por valor ou por referência. Aqui está um exemplo de passagem por referência usando ponteiros:</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+void incrementar(int *n) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*n)++;<br>
+}<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int numero = 5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;incrementar(&numero);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Número incrementado: %d\n", numero);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>A função <code>incrementar</code> recebe um ponteiro para um inteiro e incrementa o valor apontado. No <code>main</code>, o endereço de <code>numero</code> é passado para a função.</p>
+
+<h2>4. Funções Recursivas</h2>
+<p>Funções recursivas chamam a si mesmas. Um exemplo clássico é a função para calcular o fatorial de um número:</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int fatorial(int n) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (n == 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n * fatorial(n - 1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int numero = 5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Fatorial de %d: %d\n", numero, fatorial(numero));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>A função <code>fatorial</code> chama a si mesma até que <code>n</code> seja 0, retornando 1. Para qualquer outro valor, retorna <code>n</code> multiplicado pelo fatorial de <code>n-1</code>.</p>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponteiros na Programação em C</title>
+</head>
+<body>
+<h1>Ponteiros na Programação em C</h1>
+<p>Ponteiros são uma das funcionalidades mais poderosas da linguagem C. Eles armazenam o endereço de memória de uma variável, permitindo manipulações diretas na memória, o que pode resultar em programas mais eficientes.</p>
+
+<h2>1. Declaração de Ponteiros</h2>
+<p>Um ponteiro é declarado com o uso do operador <code>*</code>, que indica que a variável será um ponteiro para um determinado tipo de dado.</p>
+
+<pre><code>#include&nbsp;&lt;stdio.h&gt;
+
+int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p;<br>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;&amp;x;
+
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor&nbsp;de&nbsp;x:&nbsp;%d\n",&nbsp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf("Endereço&nbsp;de&nbsp;x:&nbsp;%p\n",&nbsp;&amp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor&nbsp;armazenado&nbsp;em&nbsp;p&nbsp;(endereço&nbsp;de&nbsp;x):&nbsp;%p\n",&nbsp;p);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor&nbsp;apontado&nbsp;por&nbsp;p:&nbsp;%d\n",*&nbsp;p);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
+}
+</code></pre>
+
+<p>O exemplo acima declara um ponteiro <code>p</code> que armazena o endereço da variável <code>x</code>. Acessamos o valor de <code>x</code> tanto diretamente quanto indiretamente através de <code>p</code> usando o operador <code>*</code> (desreferenciação).</p>
+
+<h2>2. Ponteiros e Arrays</h2>
+<p>Arrays e ponteiros estão intimamente relacionados, já que o nome de um array em C é, na verdade, um ponteiro para o seu primeiro elemento.</p>
+
+<pre><code>#include&nbsp;&lt;stdio.h&gt;
+
+int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;arr[3]&nbsp;=&nbsp;{1,&nbsp;2,&nbsp;3};<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p&nbsp;=&nbsp;arr;
+
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Elemento&nbsp;%d:&nbsp;%d\n",&nbsp;i,&nbsp;*(p&nbsp;+&nbsp;i));<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
+}
+</code></pre>
+
+<p>No exemplo acima, o ponteiro <code>p</code> aponta para o primeiro elemento do array <code>arr</code>. Podemos acessar os elementos do array utilizando a aritmética de ponteiros.</p>
+
+<h2>3. Ponteiros e Funções</h2>
+<p>Ponteiros são frequentemente utilizados para passar variáveis por referência para funções, permitindo que uma função modifique o valor original de uma variável fora do seu escopo.</p>
+
+<pre><code>#include&nbsp;&lt;stdio.h&gt;
+
+void&nbsp;incrementa(int&nbsp;*p)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;(*p)++;
+}
+
+int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;<br>&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor&nbsp;de&nbsp;x&nbsp;antes:&nbsp;%d\n",&nbsp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;incrementa(&nbsp;&amp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor&nbsp;de&nbsp;x&nbsp;depois:&nbsp;%d\n",&nbsp;x);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
+}
+</code></pre>
+
+<p>A função <code>incrementa</code> recebe um ponteiro como argumento, permitindo modificar o valor da variável <code>x</code> dentro da função.</p>
+
+<h2>4. Alocação Dinâmica de Memória</h2>
+<p>Ponteiros são essenciais para alocar memória dinamicamente usando funções como <code>malloc</code> e <code>free</code>, que permitem gerenciar a memória em tempo de execução.</p>
+
+<pre><code>#include&nbsp;&lt;stdio.h&gt;<br>#include&nbsp;&lt;stdlib.h&gt;
+
+int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p&nbsp;=&nbsp;(int&nbsp;*)malloc(3&nbsp;*&nbsp;sizeof(int));
+
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(p&nbsp;==&nbsp;NULL)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Erro&nbsp;ao&nbsp;alocar&nbsp;memória.\n");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p[i]&nbsp;=&nbsp;i&nbsp;+&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Elemento&nbsp;%d:&nbsp;%d\n",&nbsp;i,&nbsp;p[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;free(p);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
+}
+</code></pre>
+
+<p>No exemplo acima, usamos <code>malloc</code> para alocar memória para um array de três inteiros e, após o uso, liberamos a memória com <code>free</code>.</p>
+
+</body>
+</html>

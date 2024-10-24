@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Dados na Programação em C</title>
+</head>
+<body>
+<h1>Estruturas de Dados na Programação em C</h1>
+
+<p>Estruturas de dados são maneiras de organizar e armazenar dados de forma eficiente. Em C, algumas das principais estruturas de dados são arrays, structs, listas ligadas, pilhas e filas.</p>
+
+<h2>1. Arrays</h2>
+<p>Arrays são coleções de elementos do mesmo tipo armazenados em posições contíguas na memória. Eles são úteis para armazenar um conjunto de dados relacionados.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int numeros[5] = {1, 2, 3, 4, 5};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 5; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Número %d: %d\n", i, numeros[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O exemplo acima declara um array de 5 inteiros e imprime cada elemento usando um loop <code>for</code>.</p>
+
+<h2>2. Structs</h2>
+<p>Structs são usadas para agrupar variáveis de diferentes tipos sob um mesmo nome. Elas são úteis para representar um conjunto de dados relacionados.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+typedef struct {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int idade;<br>
+} Pessoa;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pessoa p;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strcpy(p.nome, "João");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p.idade = 30;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Nome: %s\n", p.nome);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Idade: %d\n", p.idade);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>A <code>struct</code> <code>Pessoa</code> agrupa um nome e uma idade. No exemplo, criamos uma variável <code>p</code> do tipo <code>Pessoa</code>, definimos seus campos e os imprimimos.</p>
+
+<h2>3. Listas Ligadas</h2>
+<p>Listas ligadas são estruturas de dados dinâmicas compostas por nós, onde cada nó contém um valor e um ponteiro para o próximo nó. Elas são úteis para manipular conjuntos de dados de tamanho variável.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+<br>
+typedef struct Node {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int valor;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct Node *proximo;<br>
+} Node;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Node *n1 = (Node *)malloc(sizeof(Node));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Node *n2 = (Node *)malloc(sizeof(Node));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n1-&gt;valor = 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n2-&gt;valor = 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n1-&gt;proximo = n2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n2-&gt;proximo = NULL;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Node *atual = n1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while (atual != NULL) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Valor: %d\n", atual-&gt;valor);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atual = atual-&gt;proximo;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;free(n1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;free(n2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O exemplo acima cria uma lista ligada com dois nós, inicializa seus valores e imprime os valores armazenados. Lembre-se de liberar a memória alocada com <code>free</code>.</p>
+
+<h2>4. Pilhas</h2>
+<p>Pilhas são estruturas de dados que seguem a política LIFO (Last In, First Out), onde o último elemento adicionado é o primeiro a ser removido. Elas são úteis para implementar recursão e gerenciamento de memória.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#define MAX 100<br>
+<br>
+typedef struct {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int dados[MAX];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int topo;<br>
+} Pilha;<br>
+<br>
+void inicializar(Pilha *p) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;topo = -1;<br>
+}<br>
+<br>
+int estaVazia(Pilha *p) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return p-&gt;topo == -1;<br>
+}<br>
+<br>
+void empilhar(Pilha *p, int valor) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (p-&gt;topo &lt; MAX - 1) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;dados[++p-&gt;topo] = valor;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+<br>
+int desempilhar(Pilha *p) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (!estaVazia(p)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return p-&gt;dados[p-&gt;topo--];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return -1; // Valor indicativo de erro<br>
+}<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pilha p;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;inicializar(&p);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;empilhar(&p, 10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;empilhar(&p, 20);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Desempilhado: %d\n", desempilhar(&p));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Desempilhado: %d\n", desempilhar(&p));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O exemplo acima demonstra uma pilha implementada com um array. Funções para empilhar e desempilhar são fornecidas, e o programa imprime os valores removidos da pilha.</p>
+
+<h2>5. Filas</h2>
+<p>Filas são estruturas de dados que seguem a política FIFO (First In, First Out), onde o primeiro elemento adicionado é o primeiro a ser removido. Elas são úteis para gerenciar tarefas e processos.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#define MAX 100<br>
+<br>
+typedef struct {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int dados[MAX];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int frente;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int tras;<br>
+} Fila;<br>
+<br>
+void inicializar(Fila *f) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;frente = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;tras = -1;<br>
+}<br>
+<br>
+int estaVazia(Fila *f) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return f-&gt;frente > f-&gt;tras;<br>
+}<br>
+<br>
+void enfileirar(Fila *f, int valor) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (f-&gt;tras &lt; MAX - 1) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;dados[++f-&gt;tras] = valor;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+<br>
+int desenfileirar(Fila *f) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp

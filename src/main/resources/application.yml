@@ -62,6 +62,52 @@ personagens:
             - texto: "centimetros = polegada * 2.54;"
               id: 4
               correto: false
+        - mensagem: "Qual das alternativas a seguir é a forma correta de ler um número inteiro do teclado e exibi-lo na tela em C?"
+          questao: "exibir_numero"
+          opcoesResposta:
+            - texto: "scanf('%d', num); printf('%d', num);"
+              id: 1
+              correto: false
+            - texto: "scanf('%d', &num); printf('%d', num);"
+              id: 2
+              correto: true
+            - texto: "scanf('%d', num); printf('d', &num);"
+              id: 3
+              correto: false
+            - texto: "scanf('%d', &num); printf('%d', &num);"
+              id: 4
+              correto: false
+        - mensagem: "Ana está criando um programa que pede para o usuário digitar sua idade e exibe uma mensagem dizendo quantos anos ele terá daqui a 5 anos. Qual das alternativas abaixo implementa essa lógica corretamente?"
+          questao: "ana_idade"
+          opcoesResposta:
+            - texto: "scanf('%d', idade); printf('Em 5 anos você terá %d anos', idade + 5);"
+              id: 1
+              correto: false
+            - texto: "scanf('%d', &idade); printf('Em 5 anos você terá %d anos', idade + 5);"
+              id: 2
+              correto: true
+            - texto: "scanf('%d', &idade); printf('Em 5 anos você terá %d anos', &idade + 5);"
+              id: 3
+              correto: false
+            - texto: "scanf('%d', idade); printf('Em 5 anos você terá %d anos', &idade + 5);"
+              id: 4
+              correto: false
+        - mensagem: "Fernanda está criando um programa que lê dois números inteiros do teclado e calcula o resultado da divisão do primeiro número pelo segundo. Qual das opções abaixo implementa corretamente essa divisão em C?"
+          questao: "fernanda_inteiros"
+          opcoesResposta:
+            - texto: "scanf('%d %d', &a, &b); printf('%f', a / b);"
+              id: 1
+              correto: false
+            - texto: "scanf('%d %d', &a, &b); printf('%d', a / b);"
+              id: 2
+              correto: false
+            - texto: "scanf('%d %d', a, b); printf('%d', a / b);"
+              id: 3
+              correto: false
+            - texto: "scanf('%d %d', &a, &b); printf('%f', (float)a / b);"
+              id: 4
+              correto: true
+
         - mensagem: "Ótimo! Você pode revisar os conteúdos que aprendemos aqui no seu caderno de anotações. Alguns colegas seus podem estar precisando de ajuda, seria interessante procurá-los pelo Campus da universidade e tentar auxiliá-los. Boa sorte!"
           opcoesResposta:
             - texto: "Finalizar conversa"
@@ -100,6 +146,66 @@ personagens:
               id: 3
               correto: false
             - texto: "} elif printf(\"Nenhum dos tipos anteriores\");"
+              id: 4
+              correto: false
+        - mensagem: "Paulo está criando um programa que lê um número inteiro e verifica se ele é par ou ímpar. Qual das opções abaixo implementa essa verificação corretamente?"
+          questao: "paulo_par_impar"
+          opcoesResposta:
+            - texto: "scanf('%d', &num); if (num % 2 == 0) printf('Par'); else printf('Ímpar');"
+              id: 1
+              correto: true
+            - texto: "scanf('%d', &num); if (num / 2 == 0) printf('Par'); else printf('Ímpar');"
+              id: 2
+              correto: false
+            - texto: "scanf('%d', num); if (num % 2 == 0) printf('Par'); else printf('Ímpar');"
+              id: 3
+              correto: false
+            - texto: "scanf('%d', &num); if (num % 2 == 1) printf('Par'); else printf('Ímpar');"
+              id: 4
+              correto: false
+        - mensagem: "Carlos quer um programa que leia três números (a,b,c) e mostre qual é o maior entre eles. Qual das opções a seguir implementa corretamente essa comparação?"
+          questao: "carlos"
+          opcoesResposta:
+            - texto: "if (a > b && a > c) printf('%d', a); else if (b > a && b > c) printf('%d', b); else printf('%d', c);"
+              id: 1
+              correto: true
+            - texto: "if (a > b && a > c) printf('%d', a); else if (b > a && b > c) printf('%d', b); else printf('%d', a);"
+              id: 2
+              correto: false
+            - texto: "if (a > b && a > c) printf('%d', a); else if (b > a && b > c) printf('%d', b); else printf('%d', a);"
+              id: 3
+              correto: false
+            - texto: "if (a > b && a > c) printf('%d', a); else if (b > a && b > c) printf('%d', b); else printf('%d', c);"
+              id: 4
+              correto: false
+        - mensagem: "Considere o seguinte trecho de código em C. O que será imprimido no console após executar esse código?"
+          questao: "switch_case"
+          opcoesResposta:
+            - texto: "DoisOutro número"
+              id: 1
+              correto: false
+            - texto: "DoisTrêsOutro número"
+              id: 2
+              correto: true
+            - texto: "UmDoisTrêsOutro número"
+              id: 3
+              correto: false
+            - texto: "Dois"
+              id: 4
+              correto: false
+        - mensagem: "Considere o seguinte trecho de código em C. O que será imprimido no console após executar esse código?"
+          questao: "break"
+          opcoesResposta:
+            - texto: "Um"
+              id: 1
+              correto: false
+            - texto: "Dois"
+              id: 2
+              correto: true
+            - texto: "Três"
+              id: 3
+              correto: false
+            - texto: "Outro número"
               id: 4
               correto: false
         - mensagem: "Show, agora tudo se encaixa! valeu!"
@@ -195,6 +301,51 @@ personagens:
             - texto: "if (verificarMultiplo(M, N)) {"
               id: 4
               correto: true
+        - mensagem: "Em C, um subprograma é uma parte do código que pode ser chamada a partir de outros locais do programa para realizar uma tarefa específica. Qual das seguintes alternativas descreve corretamente um subprograma em C?"
+          questao: "subprograma_conceito"
+          opcoesResposta:
+            - texto: "Uma função que é executada automaticamente quando o programa começa."
+              id: 1
+              correto: false
+            - texto: "Uma variável global que armazena diferentes tipos de dados."
+              id: 2
+              correto: false
+            - texto: "Um bloco de código que pode ser chamado várias vezes durante a execução do programa."
+              id: 3
+              correto: true
+            - texto: "Um tipo de dado que armazena endereços de memória."
+              id: 4
+              correto: false
+        - mensagem: "Em C, para definir um subprograma (função), é necessário declarar seu tipo de retorno, nome e parâmetros. Qual das alternativas a seguir é um exemplo correto de uma função em C que retorna um número inteiro?"
+          questao: "subprograma_escrita"
+          opcoesResposta:
+            - texto: "void soma(int a, int b) { return a + b; }"
+              id: 1
+              correto: false
+            - texto: "int soma(int a, int b) { return a + b; }"
+              id: 2
+              correto: true
+            - texto: "int soma(a, b) { a + b; }"
+              id: 3
+              correto: false
+            - texto: "soma(int a, int b) { return a + b; }"
+              id: 4
+              correto: false
+        - mensagem: "Em C, uma função pode retornar um valor para o ponto onde foi chamada. Qual das alternativas a seguir descreve corretamente o tipo de retorno de uma função?"
+          questao: "subprograma_retorno"
+          opcoesResposta:
+            - texto: "O tipo de retorno indica a quantidade de parâmetros que a função aceita."
+              id: 1
+              correto: false
+            - texto: "O tipo de retorno define o tipo de dado que a função recebe como parâmetro."
+              id: 2
+              correto: false
+            - texto: "O tipo de retorno indica o tipo de dado que a função devolve após sua execução."
+              id: 3
+              correto: true
+            - texto: "O tipo de retorno é sempre void para todas as funções em C."
+              id: 4
+              correto: false
         - mensagem: "Muito bem jovem, você agora já tem uma ideia de como usar subprogramas quando estiver programando. Continue praticando!"
           opcoesResposta:
             - texto: "Obrigado professora!"
@@ -303,7 +454,7 @@ personagens:
               correto: false
 
         - mensagem: "Seja o trecho de código acima, que valor de c será impresso no comando printf?"
-          questao: ""
+          questao: "ponteiros_17"
           opcoesResposta:
             - texto: "c = 5;"
               id: 1
@@ -332,36 +483,44 @@ personagens:
             - texto: "Ponteiro é uma variável que armazena endereço"
               id: 4
               correto: true
+        - mensagem: "Em C, os ponteiros são variáveis que armazenam o endereço de memória de outra variável. Qual das alternativas a seguir é verdadeira sobre ponteiros?"
+          questao: ""
+          opcoesResposta:
+            - texto: "Um ponteiro armazena o valor da variável à qual ele aponta."
+              id: 1
+              correto: false
+            - texto: "Um ponteiro sempre aponta para uma função."
+              id: 2
+              correto: false
+            - texto: "Um ponteiro armazena o endereço de memória de outra variável."
+              id: 3
+              correto: true
+            - texto: "Um ponteiro não pode ser modificado após ser declarado."
+              id: 4
+              correto: false
         - mensagem: "Bom demais, obrigado pelo help, acho que agora vai dar bom na avaliação!"
           opcoesResposta:
             - texto: "Boa sorte!"
-
-    - id: 7 # ALUNO DIONISIO
-      nome: "Dionísio"
-      linhasDialogo:
-        - mensagem: "Olá! Sou o Ian, sua INTELIGÊNCIA ARTIFICIAL para estudos em programação. Como posso ajudá-lo hoje?"
-          opcoesResposta:
-            - texto: "Qual conteúdo de programação você teria para me passar?"
 anotacoes:
   lista:
     - id: 1
       titulo: "COMANDOS DE ENTRADA E SAÍDA"
-      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    <title>Anotação de Comandos de Entrada e Saída em C</title></head><body><h1><strong>Anotação de Comandos de Entrada e Saída em C</strong></h1><p>Comandos de entrada e saída são fundamentais em qualquer linguagem de programação, permitindo a interação entre o usuário e o programa. Em C, as principais funções para entrada e saída de dados estão na biblioteca padrão stdio.h. A seguir, uma breve explicação sobre os comandos de entrada e saída em C e suas principais funções:</p><h2><strong>Entrada de Dados</strong></h2><p>Para obter dados do usuário ou de um arquivo, utilizamos funções de entrada. As mais comuns são:</p><ol>    <li>        <strong>scanf</strong>: Lê dados formatados da entrada padrão (geralmente o teclado).        <br>#include &lt;stdio.h&gt;        <br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Digite sua idade: \");<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf(\"%d\", &idade); // Lê um inteiro da entrada padrão e armazena na variável 'idade'<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você tem %d anos.\n\", idade);<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}    </li>    <li>        <strong>gets</strong>: Lê uma linha de texto da entrada padrão. (Nota: gets é insegura e foi removida na C11. Use fgets).        <br>#include &lt;stdio.h&gt;<br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Digite seu nome: \");<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fgets(nome, 50, stdin); // Lê uma linha de texto da entrada padrão e armazena na variável 'nome'<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Olá, %s\", nome);<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br>    </li></ol><h2><strong>Saída de Dados</strong></h2><p>Para exibir dados ao usuário ou gravar em um arquivo, utilizamos funções de saída. As mais comuns são:</p><ol>    <li>        <strong>printf</strong>: Escreve dados formatados na saída padrão (geralmente a tela).        <br>#include &lt;stdio.h&gt;        <br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 25;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você tem %d anos.\n\", idade); // Imprime um inteiro na saída padrão<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}</pre>    </li>    <li>        <strong>puts</strong>: Escreve uma string na saída padrão, seguida de uma nova linha.        <br>#include &lt;stdio.h&gt;<br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char nome[] = \"Alice\";<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(\"Olá!\"); // Imprime a string e adiciona uma nova linha<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(nome); // Imprime o conteúdo da variável 'nome' seguido de uma nova linha<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}</pre>    </li></ol><p>Essas funções são essenciais para a maioria das operações de entrada e saída em C. A compreensão e o uso correto dessas funções permitem a criação de programas interativos e a manipulação eficaz de dados.</p></body></html>"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    </head><body><h1><strong>Anotação de Comandos de Entrada e Saída em C</strong></h1><p>Comandos de entrada e saída são fundamentais em qualquer linguagem de programação, permitindo a interação entre o usuário e o programa. Em C, as principais funções para entrada e saída de dados estão na biblioteca padrão stdio.h. A seguir, uma breve explicação sobre os comandos de entrada e saída em C e suas principais funções:</p><h2><strong>Entrada de Dados</strong></h2><p>Para obter dados do usuário ou de um arquivo, utilizamos funções de entrada. As mais comuns são:</p><ol>    <li>        <strong>scanf</strong>: Lê dados formatados da entrada padrão (geralmente o teclado).        <br>#include &lt;stdio.h&gt;        <br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Digite sua idade: \");<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf(\"%d\", &idade); // Lê um inteiro da entrada padrão e armazena na variável 'idade'<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você tem %d anos.\n\", idade);<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}    </li>    <li>        <strong>gets</strong>: Lê uma linha de texto da entrada padrão. (Nota: gets é insegura e foi removida na C11. Use fgets).        <br>#include &lt;stdio.h&gt;<br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Digite seu nome: \");<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fgets(nome, 50, stdin); // Lê uma linha de texto da entrada padrão e armazena na variável 'nome'<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Olá, %s\", nome);<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br>    </li></ol><h2><strong>Saída de Dados</strong></h2><p>Para exibir dados ao usuário ou gravar em um arquivo, utilizamos funções de saída. As mais comuns são:</p><ol>    <li>        <strong>printf</strong>: Escreve dados formatados na saída padrão (geralmente a tela).        <br>#include &lt;stdio.h&gt;        <br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 25;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você tem %d anos.\n\", idade); // Imprime um inteiro na saída padrão<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}</pre>    </li>    <li>        <strong>puts</strong>: Escreve uma string na saída padrão, seguida de uma nova linha.        <br>#include &lt;stdio.h&gt;<br>int main() {<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char nome[] = \"Alice\";<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(\"Olá!\"); // Imprime a string e adiciona uma nova linha<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(nome); // Imprime o conteúdo da variável 'nome' seguido de uma nova linha<br>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}</pre>    </li></ol><p>Essas funções são essenciais para a maioria das operações de entrada e saída em C. A compreensão e o uso correto dessas funções permitem a criação de programas interativos e a manipulação eficaz de dados.</p></body></html>"
     - id: 2
       titulo: "CONDICIONAIS"
-      texto: "para papapapapa para pa pa"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    </head><body><h1>Condicionais na Programação em C</h1><p>As condicionais são usadas para tomar decisões com base em certas condições. Na linguagem C, as principais estruturas condicionais são o <code>if</code>, <code>else if</code>, <code>else</code> e o <code>switch</code>.</p><h2>1. Estrutura <code>if</code></h2><p>A estrutura <code>if</code> permite executar um bloco de código se uma condição for verdadeira.</p><br>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 18;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (idade &gt;= 18) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você é maior de idade.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>Se a condição <code>(idade &gt;= 18)</code> for verdadeira, a mensagem será exibida.</p><h2>2. Estrutura <code>else</code></h2><p>A estrutura <code>else</code> é usada junto com o <code>if</code> para executar um bloco de código se a condição do <code>if</code> for falsa.</p><br>#include &lt;stdio.h&gt;<br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 16;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (idade &gt;= 18) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você é maior de idade.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Você é menor de idade.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>Se a condição <code>(idade &gt;= 18)</code> for falsa, a mensagem \"Você é menor de idade.\" será exibida.</p><h2>3. Estrutura <code>else if</code></h2><p>A estrutura <code>else if</code> é usada para testar múltiplas condições.</p>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int nota = 75;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nota &gt;= 90) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Nota A.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (nota &gt;= 80) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Nota B.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (nota &gt;= 70) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Nota C.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Nota D.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O programa verifica as condições na ordem e executa o bloco de código do primeiro <code>if</code> ou <code>else if</code> cuja condição for verdadeira.</p><h2>4. Estrutura <code>switch</code></h2><p>A estrutura <code>switch</code> é uma alternativa ao <code>else if</code> para testar uma variável contra diferentes valores.</p>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int dia = 3;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch (dia) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Domingo\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Segunda-feira\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Terça-feira\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Outro dia\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br>    <p>O <code>switch</code> compara a variável <code>dia</code> com cada <code>case</code>. Quando encontra um <code>case</code> correspondente, executa o bloco de código associado. O <code>break</code> é usado para sair da estrutura <code>switch</code> após executar o bloco de código do <code>case</code> correspondente.</p></body></html>"
     - id: 3
       titulo: "COMANDOS DE REPETIÇÃO"
-      texto: "para papapapapa para pa pa"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">   </head><body><h1>Comandos de Repetição na Programação em C</h1><p>Os comandos de repetição são usados para executar um bloco de código várias vezes. Na linguagem C, os principais comandos de repetição são o <code>for</code>, <code>while</code> e <code>do...while</code>.</p><h2>1. Estrutura <code>for</code></h2><p>A estrutura <code>for</code> é usada quando sabemos com antecedência quantas vezes queremos repetir um bloco de código.</p><br>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 10; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Número %d\n\", i);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O loop <code>for</code> inicializa a variável <code>i</code> em 0, verifica a condição <code>i &lt; 10</code> e incrementa <code>i</code> em 1 a cada iteração, executando o bloco de código até que a condição seja falsa.</p><h2>2. Estrutura <code>while</code></h2><p>A estrutura <code>while</code> repete um bloco de código enquanto uma condição for verdadeira.</p><br>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;while (i &lt; 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Número %d\n\", i);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O loop <code>while</code> verifica a condição <code>i &lt; 10</code> antes de cada iteração e executa o bloco de código enquanto a condição for verdadeira.</p><h2>3. Estrutura <code>do...while</code></h2><p>A estrutura <code>do...while</code> é semelhante ao <code>while</code>, mas verifica a condição após cada iteração, garantindo que o bloco de código seja executado pelo menos uma vez.</p><br>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;do {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Número %d\n\", i);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>&nbsp;&nbsp;&nbsp;&nbsp;} while (i &lt; 10);<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O loop <code>do...while</code> executa o bloco de código uma vez antes de verificar a condição <code>i &lt; 10</code> após cada iteração.</p></body></html>"
     - id: 4
       titulo: "SUBPROGRAMAS"
-      texto: "para papapapapa para pa pa"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body><h1>Subprogramas na Programação em C</h1><p>Subprogramas, também conhecidos como funções ou procedimentos, são blocos de código que realizam uma tarefa específica e podem ser chamados a partir de outras partes do programa. Em C, os subprogramas ajudam a organizar e reutilizar o código.</p><h2>1. Definição de Função</h2><p>Uma função é definida com um tipo de retorno, um nome e parâmetros opcionais. Aqui está um exemplo de função que soma dois números:</p><br>#include &lt;stdio.h&gt;<br><br>int soma(int a, int b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>}<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int resultado = soma(5, 3);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Resultado: %d\n\", resultado);<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>A função <code>soma</code> recebe dois inteiros como parâmetros e retorna a soma deles. No <code>main</code>, a função é chamada com os valores 5 e 3.</p><h2>2. Funções sem Retorno (void)</h2><p>Funções que não retornam um valor têm o tipo de retorno <code>void</code>. Elas podem executar ações, como exibir uma mensagem:</p><br>#include &lt;stdio.h&gt;<br><br>void saudacao() {<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Olá, mundo!\n\");<br>}<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;saudacao();<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>A função <code>saudacao</code> não retorna nenhum valor e simplesmente imprime \"Olá, mundo!\".</p><h2>3. Passagem de Parâmetros</h2><p>Os parâmetros podem ser passados por valor ou por referência. Aqui está um exemplo de passagem por referência usando ponteiros:</p><br>#include &lt;stdio.h&gt;<br><br>void incrementar(int *n) {<br>&nbsp;&nbsp;&nbsp;&nbsp;(*n)++;<br>}<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int numero = 5;<br>&nbsp;&nbsp;&nbsp;&nbsp;incrementar(&numero);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Número incrementado: %d\n\", numero);<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>A função <code>incrementar</code> recebe um ponteiro para um inteiro e incrementa o valor apontado. No <code>main</code>, o endereço de <code>numero</code> é passado para a função.</p><h2>4. Funções Recursivas</h2><p>Funções recursivas chamam a si mesmas. Um exemplo clássico é a função para calcular o fatorial de um número:</p><br>#include &lt;stdio.h&gt;<br><br>int fatorial(int n) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (n == 0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n * fatorial(n - 1);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int numero = 5;<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Fatorial de %d: %d\n\", numero, fatorial(numero));<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>A função <code>fatorial</code> chama a si mesma até que <code>n</code> seja 0, retornando 1. Para qualquer outro valor, retorna <code>n</code> multiplicado pelo fatorial de <code>n-1</code>.</p></body></html>"
     - id: 5
       titulo: "ESTRUTURA DE DADOS"
-      texto: "para papapapapa para pa pa"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    <title>Estruturas de Dados na Programação em C</title></head><body><h1>Estruturas de Dados na Programação em C</h1><p>Estruturas de dados são maneiras de organizar e armazenar dados de forma eficiente. Em C, algumas das principais estruturas de dados são arrays, structs, listas ligadas, pilhas e filas.</p><h2>1. Arrays</h2><p>Arrays são coleções de elementos do mesmo tipo armazenados em posições contíguas na memória. Eles são úteis para armazenar um conjunto de dados relacionados.</p><br>#include &lt;stdio.h&gt;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;int numeros[5] = {1, 2, 3, 4, 5};<br>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 5; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Número %d: %d\n\", i, numeros[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O exemplo acima declara um array de 5 inteiros e imprime cada elemento usando um loop <code>for</code>.</p><h2>2. Structs</h2><p>Structs são usadas para agrupar variáveis de diferentes tipos sob um mesmo nome. Elas são úteis para representar um conjunto de dados relacionados.</p><br>#include &lt;stdio.h&gt;<br><br>typedef struct {<br>&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];<br>&nbsp;&nbsp;&nbsp;&nbsp;int idade;<br>} Pessoa;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;Pessoa p;<br>&nbsp;&nbsp;&nbsp;&nbsp;strcpy(p.nome, \"João\");<br>&nbsp;&nbsp;&nbsp;&nbsp;p.idade = 30;<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Nome: %s\n\", p.nome);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Idade: %d\n\", p.idade);<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>A <code>struct</code> <code>Pessoa</code> agrupa um nome e uma idade. No exemplo, criamos uma variável <code>p</code> do tipo <code>Pessoa</code>, definimos seus campos e os imprimimos.</p><h2>3. Listas Ligadas</h2><p>Listas ligadas são estruturas de dados dinâmicas compostas por nós, onde cada nó contém um valor e um ponteiro para o próximo nó. Elas são úteis para manipular conjuntos de dados de tamanho variável.</p><br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br><br>typedef struct Node {<br>&nbsp;&nbsp;&nbsp;&nbsp;int valor;<br>&nbsp;&nbsp;&nbsp;&nbsp;struct Node *proximo;<br>} Node;<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;Node *n1 = (Node *)malloc(sizeof(Node));<br>&nbsp;&nbsp;&nbsp;&nbsp;Node *n2 = (Node *)malloc(sizeof(Node));<br>&nbsp;&nbsp;&nbsp;&nbsp;n1-&gt;valor = 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;n2-&gt;valor = 2;<br>&nbsp;&nbsp;&nbsp;&nbsp;n1-&gt;proximo = n2;<br>&nbsp;&nbsp;&nbsp;&nbsp;n2-&gt;proximo = NULL;<br>&nbsp;&nbsp;&nbsp;&nbsp;Node *atual = n1;<br>&nbsp;&nbsp;&nbsp;&nbsp;while (atual != NULL) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor: %d\n\", atual-&gt;valor);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atual = atual-&gt;proximo;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;free(n1);<br>&nbsp;&nbsp;&nbsp;&nbsp;free(n2);<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O exemplo acima cria uma lista ligada com dois nós, inicializa seus valores e imprime os valores armazenados. Lembre-se de liberar a memória alocada com <code>free</code>.</p><h2>4. Pilhas</h2><p>Pilhas são estruturas de dados que seguem a política LIFO (Last In, First Out), onde o último elemento adicionado é o primeiro a ser removido. Elas são úteis para implementar recursão e gerenciamento de memória.</p><br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#define MAX 100<br><br>typedef struct {<br>&nbsp;&nbsp;&nbsp;&nbsp;int dados[MAX];<br>&nbsp;&nbsp;&nbsp;&nbsp;int topo;<br>} Pilha;<br><br>void inicializar(Pilha *p) {<br>&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;topo = -1;<br>}<br><br>int estaVazia(Pilha *p) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return p-&gt;topo == -1;<br>}<br><br>void empilhar(Pilha *p, int valor) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (p-&gt;topo &lt; MAX - 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;dados[++p-&gt;topo] = valor;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>int desempilhar(Pilha *p) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (!estaVazia(p)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return p-&gt;dados[p-&gt;topo--];<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return -1; // Valor indicativo de erro<br>}<br><br>int main() {<br>&nbsp;&nbsp;&nbsp;&nbsp;Pilha p;<br>&nbsp;&nbsp;&nbsp;&nbsp;inicializar(&p);<br>&nbsp;&nbsp;&nbsp;&nbsp;empilhar(&p, 10);<br>&nbsp;&nbsp;&nbsp;&nbsp;empilhar(&p, 20);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Desempilhado: %d\n\", desempilhar(&p));<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Desempilhado: %d\n\", desempilhar(&p));<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}<br><br><p>O exemplo acima demonstra uma pilha implementada com um array. Funções para empilhar e desempilhar são fornecidas, e o programa imprime os valores removidos da pilha.</p><h2>5. Filas</h2><p>Filas são estruturas de dados que seguem a política FIFO (First In, First Out), onde o primeiro elemento adicionado é o primeiro a ser removido. Elas são úteis para gerenciar tarefas e processos.</p><br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#define MAX 100<br><br>typedef struct {<br>&nbsp;&nbsp;&nbsp;&nbsp;int dados[MAX];<br>&nbsp;&nbsp;&nbsp;&nbsp;int frente;<br>&nbsp;&nbsp;&nbsp;&nbsp;int tras;<br>} Fila;<br><br>void inicializar(Fila *f) {<br>&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;frente = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;tras = -1;<br>}<br><br>int estaVazia(Fila *f) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return f-&gt;frente > f-&gt;tras;<br>}<br><br>void enfileirar(Fila *f, int valor) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (f-&gt;tras &lt; MAX - 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f-&gt;dados[++f-&gt;tras] = valor;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>int desenfileirar(Fila *f) {<br>&nbsp;&nbsp;&nbsp;&nbsp"
     - id: 6
       titulo: "PONTEIROS"
-      texto: "para papapapapa para pa pa"
+      texto: "<!DOCTYPE html><html lang=\"pt-BR\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    <title>Ponteiros na Programação em C</title></head><body><h1>Ponteiros na Programação em C</h1><p>Ponteiros são uma das funcionalidades mais poderosas da linguagem C. Eles armazenam o endereço de memória de uma variável, permitindo manipulações diretas na memória, o que pode resultar em programas mais eficientes.</p><h2>1. Declaração de Ponteiros</h2><p>Um ponteiro é declarado com o uso do operador <code>*</code>, que indica que a variável será um ponteiro para um determinado tipo de dado.</p><pre><code>#include&nbsp;&lt;stdio.h&gt;int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p;<br>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;&amp;x;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor&nbsp;de&nbsp;x:&nbsp;%d\n\",&nbsp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Endereço&nbsp;de&nbsp;x:&nbsp;%p\n\",&nbsp;&amp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor&nbsp;armazenado&nbsp;em&nbsp;p&nbsp;(endereço&nbsp;de&nbsp;x):&nbsp;%p\n\",&nbsp;p);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor&nbsp;apontado&nbsp;por&nbsp;p:&nbsp;%d\n\",*&nbsp;p);&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;}</code></pre><p>O exemplo acima declara um ponteiro <code>p</code> que armazena o endereço da variável <code>x</code>. Acessamos o valor de <code>x</code> tanto diretamente quanto indiretamente através de <code>p</code> usando o operador <code>*</code> (desreferenciação).</p><h2>2. Ponteiros e Arrays</h2><p>Arrays e ponteiros estão intimamente relacionados, já que o nome de um array em C é, na verdade, um ponteiro para o seu primeiro elemento.</p><pre><code>#include&nbsp;&lt;stdio.h&gt;int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;arr[3]&nbsp;=&nbsp;{1,&nbsp;2,&nbsp;3};<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p&nbsp;=&nbsp;arr;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Elemento&nbsp;%d:&nbsp;%d\n\",&nbsp;i,&nbsp;*(p&nbsp;+&nbsp;i));<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;}</code></pre><p>No exemplo acima, o ponteiro <code>p</code> aponta para o primeiro elemento do array <code>arr</code>. Podemos acessar os elementos do array utilizando a aritmética de ponteiros.</p><h2>3. Ponteiros e Funções</h2><p>Ponteiros são frequentemente utilizados para passar variáveis por referência para funções, permitindo que uma função modifique o valor original de uma variável fora do seu escopo.</p><pre><code>#include&nbsp;&lt;stdio.h&gt;void&nbsp;incrementa(int&nbsp;*p)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;(*p)++;}int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor&nbsp;de&nbsp;x&nbsp;antes:&nbsp;%d\n\",&nbsp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;incrementa(&nbsp;&amp;x);<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Valor&nbsp;de&nbsp;x&nbsp;depois:&nbsp;%d\n\",&nbsp;x);&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;}</code></pre><p>A função <code>incrementa</code> recebe um ponteiro como argumento, permitindo modificar o valor da variável <code>x</code> dentro da função.</p><h2>4. Alocação Dinâmica de Memória</h2><p>Ponteiros são essenciais para alocar memória dinamicamente usando funções como <code>malloc</code> e <code>free</code>, que permitem gerenciar a memória em tempo de execução.</p><pre><code>#include&nbsp;&lt;stdio.h&gt;<br>#include&nbsp;&lt;stdlib.h&gt;int&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*p&nbsp;=&nbsp;(int&nbsp;*)malloc(3&nbsp;*&nbsp;sizeof(int));&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(p&nbsp;==&nbsp;NULL)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Erro&nbsp;ao&nbsp;alocar&nbsp;memória.\n\");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p[i]&nbsp;=&nbsp;i&nbsp;+&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;3;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Elemento&nbsp;%d:&nbsp;%d\n\",&nbsp;i,&nbsp;p[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;free(p);&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;}</code></pre><p>No exemplo acima, usamos <code>malloc</code> para alocar memória para um array de três inteiros e, após o uso, liberamos a memória com <code>free</code>.</p></body></html>"
 
 insignias:
   lista:

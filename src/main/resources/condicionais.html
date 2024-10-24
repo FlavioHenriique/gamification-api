@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais na Programação em C</title>
+</head>
+<body>
+<h1>Condicionais na Programação em C</h1>
+
+<p>As condicionais são usadas para tomar decisões com base em certas condições. Na linguagem C, as principais estruturas condicionais são o <code>if</code>, <code>else if</code>, <code>else</code> e o <code>switch</code>.</p>
+
+<h2>1. Estrutura <code>if</code></h2>
+<p>A estrutura <code>if</code> permite executar um bloco de código se uma condição for verdadeira.</p>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 18;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (idade &gt;= 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Você é maior de idade.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>Se a condição <code>(idade &gt;= 18)</code> for verdadeira, a mensagem será exibida.</p>
+
+<h2>2. Estrutura <code>else</code></h2>
+<p>A estrutura <code>else</code> é usada junto com o <code>if</code> para executar um bloco de código se a condição do <code>if</code> for falsa.</p>
+<br>#include &lt;stdio.h&gt;
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int idade = 16;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (idade &gt;= 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Você é maior de idade.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Você é menor de idade.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>Se a condição <code>(idade &gt;= 18)</code> for falsa, a mensagem "Você é menor de idade." será exibida.</p>
+
+<h2>3. Estrutura <code>else if</code></h2>
+<p>A estrutura <code>else if</code> é usada para testar múltiplas condições.</p>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int nota = 75;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nota &gt;= 90) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Nota A.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (nota &gt;= 80) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Nota B.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (nota &gt;= 70) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Nota C.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Nota D.\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<br>
+<p>O programa verifica as condições na ordem e executa o bloco de código do primeiro <code>if</code> ou <code>else if</code> cuja condição for verdadeira.</p>
+
+<h2>4. Estrutura <code>switch</code></h2>
+<p>A estrutura <code>switch</code> é uma alternativa ao <code>else if</code> para testar uma variável contra diferentes valores.</p>
+#include &lt;stdio.h&gt;<br>
+<br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int dia = 3;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch (dia) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Domingo\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Segunda-feira\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Terça-feira\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Outro dia\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+    
+<p>O <code>switch</code> compara a variável <code>dia</code> com cada <code>case</code>. Quando encontra um <code>case</code> correspondente, executa o bloco de código associado. O <code>break</code> é usado para sair da estrutura <code>switch</code> após executar o bloco de código do <code>case</code> correspondente.</p>
+</body>
+</html>
